@@ -1,4 +1,11 @@
 *.log
 *.lock
 tmp/
+.bash_history
+.bash_logout
+.m2/
+.gitconfig
+.lesshst
+.ssh/
+.emacs.d/
 
