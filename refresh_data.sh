@@ -16,8 +16,8 @@ else
   cp $GRAPH_DB_TAR_NEW $GRAPH_DB_TAR
   # figure out how to automatically stop neo4j as non-super user
   #/sbin/service neo4j-service stop
-  rm -rf $NEO4J_CACHE_DIR/neo4j/graph.db
-  tar -xvf $GRAPH_DB_TAR -C $NEO4J_CACHE_DIR/neo4j
+  rm -rf $NEO4J_CACHE_DIR/graph.db
+  tar -xvf $GRAPH_DB_TAR -C $NEO4J_CACHE_DIR
   # figure out how to automatically start neo4j as non-user user
   #/sbin/service neo4j-service start
 fi
