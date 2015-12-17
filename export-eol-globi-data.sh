@@ -1,11 +1,21 @@
+#!/bin/bash
 source ~/lock.sh
 acquire_lock
 
-source ~/.bashrc
+source ~/.profile
 
 function export_dataset {
   cd $2
-  mvn clean $4 -pl $1 -P$3
+  mvn clean -pl $1 -P$3
+  # use ramdisk to improve write IO
+  TMP_GRAPH_DB=$1/target/data/
+  RAM_DB=/var/cache/globi/ramdisk/graph.db
+  mkdir -p $TMP_GRAPH_DB
+  
+  rm -rf $RAM_DB
+  mkdir -p $RAM_DB
+  ln -s $RAM_DB $TMP_GRAPH_DB
+  mvn $4 -pl $1 -P$3
   # remove build results
   mvn clean -pl $1 -P$3
 }
@@ -24,20 +34,25 @@ function rebuild {
   mvn clean -pl eol-globi-data-tool -am -DskipTests
 }
 
-function build_dataset {
+function import_data {
   # build dataset first, install locally
-  rebuild $RAMDISK
-  export_dataset eol-globi-datasets $RAMDISK generate-datasets install
+  rebuild $1
+  export_dataset eol-globi-datasets $1 generate-datasets install
+}
+
+function link_data {
+  rebuild $1
+  export_dataset eol-globi-datasets $1 "generate-datasets,link" install
 }
 
 function export_data {
  # then export it, deploy remotely
- EXPORT_CACHE=/var/cache/globi/exports
- rebuild $EXPORT_CACHE
- export_dataset eol-globi-datasets $EXPORT_CACHE "generate-datasets,export-all" deploy
+ rebuild $1
+ export_dataset eol-globi-datasets $1 "generate-datasets,export-all" deploy
 }
 
-build_dataset
-export_data
+import_data $RAMDISK
+link_data $RAMDISK
+export_data $RAMDISK
 #export_dataset eol-globi-datasets-dark
 release_lock

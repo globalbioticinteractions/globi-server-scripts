@@ -1,5 +1,10 @@
-source ~/.bashrc
-GLOBI_HOME="/var/cache/globi/ramdisk/eol-globi-data"
+#!/bin/bash
+source ~/.profile
+if [ -z "$GLOBI_HOME" ]; then 
+	echo "please set GLOBI_HOME"
+	exit 1
+fi
+
 FUSEKI_HOME="$GLOBI_HOME/eol-globi-rdf"
 FUSEKI_DIR="$FUSEKI_HOME/target/jena-fuseki-0.2.7"
 FUSEKI_PID="$FUSEKI_DIR/fuseki.pid"
