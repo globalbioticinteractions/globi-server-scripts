@@ -9,12 +9,14 @@ function export_dataset {
   mvn clean -pl $1 -P$3
   # use ramdisk to improve write IO
   TMP_GRAPH_DB=$1/target/data/
-  RAM_DB=/var/cache/globi/ramdisk/graph.db
+  RAM_GRAPH_DB=/var/cache/globi/ramdisk/graph.db
+  RAM_MAP_DB=/var/cache/globi/ramdisk/mapdb
   mkdir -p $TMP_GRAPH_DB
   
   rm -rf $RAM_DB
   mkdir -p $RAM_DB
-  ln -s $RAM_DB $TMP_GRAPH_DB
+  ln -s $RAM_GRAPH_DB $TMP_GRAPH_DB
+  ln -s $RAM_MAP_DB $TMP_GRAPH_DB
   mvn $4 -pl $1 -P$3
   # remove build results
   mvn clean -pl $1 -P$3
