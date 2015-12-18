@@ -4,19 +4,24 @@ acquire_lock
 
 source ~/.profile
 
+function create_tmp_dir {
+  rm -rf $1
+  mkdir -p $1
+  ln -s $1 $2
+}
+
 function export_dataset {
   cd $2
   mvn clean -pl $1 -P$3
   # use ramdisk to improve write IO
-  TMP_GRAPH_DB=$1/target/data/
-  RAM_GRAPH_DB=/var/cache/globi/ramdisk/graph.db
-  RAM_MAP_DB=/var/cache/globi/ramdisk/mapdb
-  mkdir -p $TMP_GRAPH_DB
+  TMP_DATA_DIR=$1/target/data/
+  RAM_GRAPH_DIR=/var/cache/globi/ramdisk/graph.db
+  RAM_MAPDB_DIR=/var/cache/globi/ramdisk/mapdb
+  mkdir -p $TMP_DATA_DIR
+ 
+  create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR
+  create_tmp_dir $RAM_MAPDB_DIR $TMP_DATA_DIR
   
-  rm -rf $RAM_DB
-  mkdir -p $RAM_DB
-  ln -s $RAM_GRAPH_DB $TMP_GRAPH_DB
-  ln -s $RAM_MAP_DB $TMP_GRAPH_DB
   mvn $4 -pl $1 -P$3
   # remove build results
   mvn clean -pl $1 -P$3
