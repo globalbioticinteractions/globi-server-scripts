@@ -19,4 +19,7 @@ else
   sudo -u neo4j rm -rf $NEO4J_CACHE_DIR/graph.db
   sudo -u neo4j tar -xvf $GRAPH_DB_TAR -C $NEO4J_CACHE_DIR
   sudo -u neo4j /usr/sbin/service neo4j-service start
+  # reset nginx cache
+  sudo rm -rf /var/cache/nginx
+  sudo /usr/sbin/service nginx restart	
 fi
