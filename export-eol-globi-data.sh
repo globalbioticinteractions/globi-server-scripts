@@ -53,13 +53,21 @@ function link_data {
 }
 
 function export_data {
- # then export it, deploy remotely
+ # then export it, deploy artifacts to remote maven repository
  rebuild $1
  export_dataset eol-globi-datasets $1 "generate-datasets,export-all" deploy
 }
 
+function deploy_data {
+ # then export it, deploy to remove non-repository servers (e.g. ncbi linkout)
+ rebuild $1
+ export_dataset eol-globi-datasets $1 "generate-datasets,deploy-remote" install
+}
+
+
 import_data $RAMDISK
 link_data $RAMDISK
 export_data $RAMDISK
+deploy_data $RAMDISK
 #export_dataset eol-globi-datasets-dark
 release_lock
