@@ -16,14 +16,10 @@ if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_ARCHIVE_NEW >/dev/null ; then
 else
   echo File different updating
   sudo -u neo4j cp $GRAPH_DB_ARCHIVE_NEW $GRAPH_DB_ARCHIVE
-  sudo -u neo4j /usr/sbin/service neo4j-service stop
+  sudo /usr/sbin/service neo4j-service stop
   sudo -u neo4j rm -rf $NEO4J_CACHE_DIR/graph.db
-  if [ "$GRAPH_DB_EXT" -eq "zip" ] then
-    sudo -u neo4j zip $GRAPH_DB_ARCHIVE -d $NEO4J_CACHE_DIR
-  else 
-    sudo -u neo4j tar -xvf $GRAPH_DB_ARCHIVE -C $NEO4J_CACHE_DIR
-  fi
-  sudo -u neo4j /usr/sbin/service neo4j-service start
+  sudo -u neo4j zip $GRAPH_DB_ARCHIVE -d $NEO4J_CACHE_DIR
+  sudo /usr/sbin/service neo4j-service start
   # reset nginx cache
   sudo rm -rf /var/cache/nginx
   sudo /usr/sbin/service nginx restart	
