@@ -19,7 +19,7 @@ function export_dataset {
   RAM_MAPDB_DIR=/var/cache/globi/ramdisk/mapdb
   mkdir -p $TMP_DATA_DIR
  
-  create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR
+  create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR -Dneo4j.data.dir=$RAM_GRAPH_DIR
   create_tmp_dir $RAM_MAPDB_DIR $TMP_DATA_DIR
   
   nice mvn $4 -pl $1 -P$3
