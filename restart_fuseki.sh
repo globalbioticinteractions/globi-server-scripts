@@ -6,7 +6,7 @@ if [ -z "$GLOBI_HOME" ]; then
 fi
 
 FUSEKI_HOME="$GLOBI_HOME/eol-globi-rdf"
-FUSEKI_DIR="$FUSEKI_HOME/target/jena-fuseki-0.2.7"
+FUSEKI_DIR="$FUSEKI_HOME/target/apache-jena-fuseki-2.4.0"
 FUSEKI_PID="$FUSEKI_DIR/fuseki.pid"
 PID=$(cat "$FUSEKI_PID" 2>/dev/null)
 kill "$PID" 2>/dev/null
@@ -16,8 +16,7 @@ echo fuseki rebuilding...
 mvn clean install -pl eol-globi-rdf -Prdf
 
 echo fuseki starting...
-nohup java -Xmx8G -jar $FUSEKI_DIR/fuseki-server.jar --config="$FUSEKI_DIR/config.ttl" --pages="$FUSEKI_DIR/pages" &> /home/jhpoelen/eol-globi-rdf.log &
+cd $FUSEKI_DIR
+nohup java -Xmx8G -jar fuseki-server.jar --config="config.ttl" &> $FUSEKI_DIR/eol-globi-rdf.log &
 echo $! > "$FUSEKI_PID"
 echo fuseki started.
-
-
