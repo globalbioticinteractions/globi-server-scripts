@@ -68,6 +68,6 @@ function deploy_data {
 import_data $RAMDISK
 link_data $RAMDISK
 export_data $RAMDISK
-deploy_data $RAMDISK
+#deploy_data $RAMDISK
 #export_dataset eol-globi-datasets-dark
 release_lock
