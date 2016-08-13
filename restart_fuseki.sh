@@ -17,6 +17,6 @@ mvn clean install -pl eol-globi-rdf -Prdf
 
 echo fuseki starting...
 cd $FUSEKI_DIR
-nohup java -Xmx8G -jar fuseki-server.jar --config="config.ttl" &> $FUSEKI_DIR/eol-globi-rdf.log &
+nohup java -Xmx8G -jar fuseki-server.jar --localhost --config="config.ttl" &> $FUSEKI_DIR/eol-globi-rdf.log &
 echo $! > "$FUSEKI_PID"
 echo fuseki started.
