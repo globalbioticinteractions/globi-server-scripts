@@ -44,7 +44,7 @@ function rebuild {
 function import_data {
   # build dataset first, install locally
   rebuild $1
-  export_dataset eol-globi-datasets $1 generate-datasets install -Dgithub_client_id=$GITHUB_CLIENT_ID -Dgithub_client_secret=$GITHUB_CLIENT_SECRET
+  export_dataset eol-globi-datasets $1 generate-datasets install -Dgithub.client.id=$GITHUB_CLIENT_ID -Dgithub.client.secret=$GITHUB_CLIENT_SECRET
 }
 
 function link_data {
