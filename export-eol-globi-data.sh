@@ -22,7 +22,7 @@ function export_dataset {
   create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR 
   create_tmp_dir $RAM_MAPDB_DIR $TMP_DATA_DIR
   
-  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR
+  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Dgithub.client.id=$GITHUB_CLIENT_ID -Dgithub.client.secret=$GITHUB_CLIENT_SECRET
   # remove build results
   mvn clean -pl $1 -P$3
 }
@@ -44,7 +44,7 @@ function rebuild {
 function import_data {
   # build dataset first, install locally
   rebuild $1
-  export_dataset eol-globi-datasets $1 generate-datasets install -Dgithub.client.id=$GITHUB_CLIENT_ID -Dgithub.client.secret=$GITHUB_CLIENT_SECRET
+  export_dataset eol-globi-datasets $1 generate-datasets install 
 }
 
 function link_data {
