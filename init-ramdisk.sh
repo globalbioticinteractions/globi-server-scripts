@@ -3,7 +3,7 @@ RAM_DISK=/var/cache/globi/ramdisk
 /bin/umount tmpfs0
 /bin/rm -rf $RAM_DISK
 /bin/mkdir -p $RAM_DISK
-/bin/mount -t tmpfs -o size=8G tmpfs0 $RAM_DISK
+/bin/mount -t tmpfs -o size=10G tmpfs0 $RAM_DISK
 
 # rebuild git repo
 /usr/bin/git clone git://github.com/jhpoelen/eol-globi-data.git $RAM_DISK/eol-globi-data
