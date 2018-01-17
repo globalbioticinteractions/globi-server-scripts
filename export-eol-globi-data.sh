@@ -36,9 +36,9 @@ function rebuild {
   cd $1
   git pull --rebase
   # tests are executed on travis / dev machines
-  mvn clean install -pl eol-globi-data-tool -am -DskipTests
+  mvn clean install -pl eol-globi-neo4j-index -am -DskipTests
   # remove intermediate build results
-  mvn clean -pl eol-globi-data-tool -am -DskipTests
+  mvn clean -pl eol-globi-neo4j-index -am -DskipTests
 }
 
 function import_data {
