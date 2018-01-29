@@ -65,7 +65,7 @@ function deploy_data {
 }
 
 
-#import_data $RAMDISK
+import_data $RAMDISK
 link_data $RAMDISK
 export_data $RAMDISK
 #deploy_data $RAMDISK
