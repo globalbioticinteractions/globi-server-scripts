@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+set -x
+
 source ~/lock.sh
 acquire_lock
 
