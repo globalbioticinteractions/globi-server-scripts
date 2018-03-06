@@ -25,7 +25,7 @@ function export_dataset {
   create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR 
   create_tmp_dir $RAM_MAPDB_DIR $TMP_DATA_DIR
   
-  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Dgithub.client.id=$GITHUB_CLIENT_ID -Dgithub.client.secret=$GITHUB_CLIENT_SECRET -Ddataset.dir=${ELTON_DATASET_DIR} -Dglobi.taxa.version=0.4
+  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Dgithub.client.id=$GITHUB_CLIENT_ID -Dgithub.client.secret=$GITHUB_CLIENT_SECRET -Ddataset.dir=${ELTON_DATASET_DIR} -Dglobi.taxa.version=0.4.2
   # remove build results
   # mvn clean -pl $1 -P$3
 }
