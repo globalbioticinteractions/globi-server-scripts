@@ -16,12 +16,12 @@ if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_ARCHIVE_NEW >/dev/null ; then
 else
   echo File different updating
   sudo -u neo4j cp $GRAPH_DB_ARCHIVE_NEW $GRAPH_DB_ARCHIVE
-  sudo /usr/sbin/service neo4j-service stop
+  sudo /usr/sbin/service neo4j stop
   echo $(date) installing new neo4j data index...
   sudo -u neo4j rm -rf $NEO4J_CACHE_DIR/graph.db
   sudo -u neo4j unzip $GRAPH_DB_ARCHIVE -d $NEO4J_CACHE_DIR
   echo $(date) installing new neo4j data index done.
-  sudo /usr/sbin/service neo4j-service start
+  sudo /usr/sbin/service neo4j start
   echo $(date) resetting nginx cache...
   sudo rm -rf /var/cache/nginx
   sudo /usr/sbin/service nginx restart	
