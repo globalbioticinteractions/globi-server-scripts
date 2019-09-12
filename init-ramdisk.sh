@@ -6,7 +6,7 @@ RAM_DISK=/var/cache/globi/ramdisk
 /bin/mount -t tmpfs -o size=10G tmpfs0 $RAM_DISK
 
 # rebuild git repo
-/usr/bin/git clone git://github.com/jhpoelen/eol-globi-data.git $RAM_DISK/eol-globi-data
+/usr/bin/git clone git://github.com/globalbioticinteractions/globalbioticinteractions.git $RAM_DISK/eol-globi-data
 
 # rebuild neo4j database
 DATA_VERSION=1.0-SNAPSHOT
