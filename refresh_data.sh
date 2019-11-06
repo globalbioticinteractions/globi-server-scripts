@@ -1,7 +1,7 @@
 #!/bin/bash
 CACHE_DIR=/var/cache
 NEO4J_CACHE_DIR=$CACHE_DIR/neo4j
-NEO4J_CACHE_UPDATE_DIR=$CACHE_DIR/neo4j.update
+NEO4J_CACHE_UPDATE_DIR=$CACHE_DIR/neo4j/update
 MAVEN_REPO=/home/jhpoelen/.m2/repository
 
 GRAPH_DB_EXT=zip
