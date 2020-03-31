@@ -8,29 +8,63 @@ apt install nginx
 
 ## certbot
 
+```
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository universe
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install certbot python3-certbot-nginx python3-certbot-dns-cloudflare
+```
 
 
-sudo certbot -a dns-cloudflare -i nginx --server https://acme-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org
+# disable remote logins with passwords
 
-# staging certbot
+Edit ```/etc/ssh/sshd_config```:
+
+```
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+UsePAM no
+PermitRootLogin no
+```
+
+To apply ```sudo systemctl reload ssh```
+
+# install certbot
+
+create cloudflare.ini:
+$ cat /home/jhpoelen/.secret/cloudflare.ini 
+dns_cloudflare_email = "XXX"
+dns_cloudflare_api_key = "XXXX"
+
+then run the certbot:
+
+sudo certbot -a dns-cloudflare -i nginx --server https://acme-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org -d api.globalbioticinteractions.org -d neo4j.globalbioticinteractions.org -d lod.globalbioticinteractions.org -d blog.globalbioticinteractions.org
+
+# staging certbot (not production)
 
 sudo certbot -a dns-cloudflare -i nginx --server https://acme-staging-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org -d api.globalbioticinteractions.org -d neo4j.globalbioticinteractions.org -d lod.globalbioticinteractions.org -d blog.globalbioticinteractions.org
 
 
-## install neo4j 
+## install neo4j
+
+```
 wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 
 apt install neo4j=2.3.12
-
+```
 ### create neo4j systemd service
+
+Make sure to stop and disable the default ```/etc/init.d/neo4j-service``` that comes with the debian package - 
+
+```
+sudo service neo4j-service stop
+sudo service neo4j-service disable
+sudo rm /etc/init.d/neo4j-service
+```
 
 /etc/systemd/system/neo4j.service -
 
@@ -54,8 +88,10 @@ WantedBy=multi-user.target
 
 ```
 
+```
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
+```
 
 
 ## install git 
@@ -66,9 +102,17 @@ sudo apt install git
 ## maven
 sudo apt install maven
  
-## oracle's java
+## oracle's java (not working)
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
+
+## instead do,
+apt install openjdk-8-jdk-headless
+
+## server scripts
+
+git clone http://github.com/jhpoelen/globi-server-scripts
+
 
 
