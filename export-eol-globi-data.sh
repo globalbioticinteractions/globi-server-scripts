@@ -2,8 +2,8 @@
 set -e
 set -x
 
-source ~/lock.sh
-acquire_lock
+#source ~/lock.sh
+#acquire_lock
 
 source ~/.profile
 
@@ -72,4 +72,4 @@ import_data $RAMDISK
 link_data $RAMDISK
 export_data $RAMDISK
 #deploy_data $RAMDISK
-release_lock
+#release_lock
