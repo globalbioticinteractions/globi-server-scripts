@@ -5,7 +5,7 @@ After= elton.service
 [Service]
 Type=oneshot
 User=jhpoelen
-WorkingDirectory=/var/cache/globi/ramdisk/eol-globi-data
+WorkingDirectory=/var/cache/globi/ramdisk
 ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/export-eol-globi-data.sh
 
 [Install]
