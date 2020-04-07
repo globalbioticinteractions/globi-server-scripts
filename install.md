@@ -121,3 +121,16 @@ sudo mkdir -p /var/cache/elton
 sudo chown elton:elton /var/cache/elton
 sudo ln -s [server-scripts-dir]/systemd/system/elton.service /etc/systemd/service/elton.service
 sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /etc/systemd/service/elton.timer
+sudo systemctl daemon-reload
+sudo systemctl enable preston.timer
+sudo systemctl start preston.timer
+
+## restart globi api using crontab
+ ln -s [server-scripts-dir]/restart_jetty.sh ~/restart_jetty.sh
+
+add following to crontab:
+
+```
+@reboot bash /home/jhpoelen/restart_jetty.sh
+```
+
