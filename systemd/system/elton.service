@@ -1,0 +1,11 @@
+[Unit]
+Description=Elton tracks species interaction datasets
+
+[Service]
+Type=oneshot
+User=elton
+WorkingDirectory=/var/cache/elton
+ExecStart=/usr/local/bin/elton update
+
+[Install]
+WantedBy= multi-user.target

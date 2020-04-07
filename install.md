@@ -15,6 +15,7 @@ sudo add-apt-repository universe
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install certbot python3-certbot-nginx python3-certbot-dns-cloudflare
+sudo apt-get install build-essential
 ```
 
 
@@ -101,11 +102,11 @@ sudo apt install git
 ## install rest api
 ## maven
 sudo apt install maven
- 
-## oracle's java (not working)
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
+
+
+
+## 
+sudo useradd -r -s /bin/false globi
 
 ## instead do,
 apt install openjdk-8-jdk-headless
@@ -114,5 +115,9 @@ apt install openjdk-8-jdk-headless
 
 git clone http://github.com/jhpoelen/globi-server-scripts
 
-
-
+## install elton / create elton user without homedir and shell
+sudo useradd -r -s /bin/false elton
+sudo mkdir -p /var/cache/elton
+sudo chown elton:elton /var/cache/elton
+sudo ln -s [server-scripts-dir]/systemd/system/elton.service /etc/systemd/service/elton.service
+sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /etc/systemd/service/elton.timer

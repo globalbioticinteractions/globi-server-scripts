@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodically Run Elton
+
+[Timer]
+OnUnitActiveSec=2d
+RandomizedDelaySec=3600
+
+[Install]
+WantedBy=timers.target
