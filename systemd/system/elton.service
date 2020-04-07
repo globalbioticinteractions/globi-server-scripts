@@ -5,7 +5,7 @@ Description=Elton tracks species interaction datasets
 Type=oneshot
 User=elton
 WorkingDirectory=/var/cache/elton
-ExecStart=/usr/local/bin/elton update
+ExecStart=/usr/local/bin/elton update --no-progress
 
 [Install]
 WantedBy= multi-user.target
