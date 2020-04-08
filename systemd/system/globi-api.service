@@ -1,0 +1,12 @@
+[Unit]
+Description=GloBI Web API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/start_web_api.sh
+Restart=always
+User=jhpoelen
+
+[Install]
+WantedBy=multi-user.target
