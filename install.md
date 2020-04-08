@@ -127,15 +127,12 @@ sudo systemctl start preston.timer
 
 ## install globi build/update index services
 sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-build-index.service globi-build-index.service
+sudo systemctl enable globi-build-index.service
+
 sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-update-index.service globi-update-index.service
+sudo systemctl enable globi-update-index.service
 
+## install globi web api service
+sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-api.service globi-api.service
 
-## restart globi api using crontab
- ln -s [server-scripts-dir]/restart_jetty.sh ~/restart_jetty.sh
-
-add following to crontab:
-
-```
-@reboot bash /home/jhpoelen/restart_jetty.sh
-```
-
+sudo systemctl enable globi-api.service
