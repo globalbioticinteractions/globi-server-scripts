@@ -108,19 +108,19 @@ sudo systemctl enable preston.timer
 sudo systemctl start preston.timer
 
 ## install globi build/update index services
-sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-build-ramdisk.service /etc/systemd/system/globi-build-ramdisk.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-ramdisk.service /etc/systemd/system/globi-build-ramdisk.service
 sudo systemctl enable globi-build-ramdisk.service
 
-sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-unmount-ramdisk.service /etc/systemd/system/globi-unmount-ramdisk.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-unmount-ramdisk.service /etc/systemd/system/globi-unmount-ramdisk.service
 sudo systemctl enable globi-unmount-ramdisk.service
 
-sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-build-index.service /etc/systemd/system/globi-build-index.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-index.service /etc/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
-sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-update-index.service /etc/systemd/system/globi-update-index.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-update-index.service /etc/systemd/system/globi-update-index.service
 sudo systemctl enable globi-update-index.service
 
 ## install globi web api service
-sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-api.service /etc/systemd/system/globi-api.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /etc/systemd/system/globi-api.service
 
 sudo systemctl enable globi-api.service 
