@@ -18,8 +18,8 @@ function export_dataset {
   mvn clean -pl $1 -P$3
   # use ramdisk to improve write IO
   TMP_DATA_DIR=$1/target/data/
-  RAM_GRAPH_DIR=/var/cache/globi/ramdisk/graph.db
-  RAM_MAPDB_DIR=/var/cache/globi/ramdisk/mapdb
+  RAM_GRAPH_DIR=$GLOBI_RAM_DISK/graph.db
+  RAM_MAPDB_DIR=$GLOBI_RAM_DISK/mapdb
   mkdir -p $TMP_DATA_DIR
  
   create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR 
@@ -68,8 +68,8 @@ function deploy_data {
 }
 
 
-import_data $RAMDISK
-link_data $RAMDISK
-export_data $RAMDISK
-#deploy_data $RAMDISK
+import_data $GLOBI_CACHE
+link_data $GLOBI_CACHE
+export_data $GLOBI_CACHE
+#deploy_data $GLOBI_CACHE
 #release_lock

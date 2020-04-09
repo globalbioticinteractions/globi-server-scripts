@@ -4,6 +4,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
+EnvironmentFile=/etc/globi/globi.conf
 ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/start_web_api.sh
 Restart=always
 User=jhpoelen
