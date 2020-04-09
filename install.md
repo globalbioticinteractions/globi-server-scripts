@@ -105,6 +105,12 @@ sudo systemctl enable preston.timer
 sudo systemctl start preston.timer
 
 ## install globi build/update index services
+sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-build-ramdisk.service /etc/systemd/system/globi-build-ramdisk.service
+sudo systemctl enable globi-build-ramdisk.service
+
+sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-unmount-ramdisk.service /etc/systemd/system/globi-unmount-ramdisk.service
+sudo systemctl enable globi-unmount-ramdisk.service
+
 sudo ln -s /home/jhpoelen/globi-server-scripts/systemd/system/globi-build-index.service /etc/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
