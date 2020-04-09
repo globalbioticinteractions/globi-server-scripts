@@ -2,9 +2,6 @@
 set -e
 set -x
 
-#source ~/lock.sh
-#acquire_lock
-
 source ~/.profile
 
 function create_tmp_dir {
@@ -72,4 +69,3 @@ import_data $GLOBI_CACHE
 link_data $GLOBI_CACHE
 export_data $GLOBI_CACHE
 #deploy_data $GLOBI_CACHE
-#release_lock
