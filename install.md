@@ -26,7 +26,6 @@ Edit ```/etc/ssh/sshd_config```:
 ```
 ChallengeResponseAuthentication no
 PasswordAuthentication no
-UsePAM no
 PermitRootLogin no
 ```
 
@@ -47,7 +46,6 @@ sudo certbot -a dns-cloudflare -i nginx --server https://acme-v02.api.letsencryp
 
 sudo certbot -a dns-cloudflare -i nginx --server https://acme-staging-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org -d api.globalbioticinteractions.org -d neo4j.globalbioticinteractions.org -d lod.globalbioticinteractions.org -d blog.globalbioticinteractions.org
 
-
 ## install neo4j
 
 ```
@@ -67,29 +65,10 @@ sudo service neo4j-service disable
 sudo rm /etc/init.d/neo4j-service
 ```
 
-/etc/systemd/system/neo4j.service -
+Now, install the systemd neo4j service
 
 ```
-[Unit]
-Description=Neo4j Graph Database
-After=network-online.target
-Wants=network-online.target
-
-[Service]
-ExecStart=/var/lib/neo4j/bin/neo4j console
-Restart=on-failure
-User=neo4j
-Environment="NEO4J_CONF=/etc/neo4j" "NEO4J_HOME=/var/lib/neo4j"
-LimitNOFILE=60000
-TimeoutSec=120
-SuccessExitStatus=143
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-```
+sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /etc/systemd/service/neo4j.service
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
 ```

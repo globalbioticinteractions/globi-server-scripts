@@ -6,7 +6,8 @@ After= elton.service
 Type=oneshot
 User=jhpoelen
 WorkingDirectory=/var/cache/globi/ramdisk
-ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/export-eol-globi-data.sh
+ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/build-index.sh
+LimitNOFILE=60000
 
 [Install]
 WantedBy= multi-user.target
