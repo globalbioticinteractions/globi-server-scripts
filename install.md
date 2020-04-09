@@ -90,9 +90,12 @@ sudo useradd -r -s /bin/false globi
 ## instead do,
 apt install openjdk-8-jdk-headless
 
-## server scripts
-
+## server scripts and config
 git clone http://github.com/jhpoelen/globi-server-scripts
+
+## link configuration file
+sudo mkdir -p /etc/globi
+sudo ln -s [server-scripts-dir]/globi.conf /etc/globi/globi.conf
 
 ## install elton / create elton user without homedir and shell
 sudo useradd -r -s /bin/false elton
