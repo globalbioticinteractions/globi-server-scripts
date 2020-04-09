@@ -6,7 +6,7 @@ After= elton.service
 Type=oneshot
 User=jhpoelen
 EnvironmentFile=/etc/globi/globi.conf
-WorkingDirectory=/var/cache/globi/eol-globi-data
+WorkingDirectory=/var/cache/globi/
 ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/build-index.sh
 LimitNOFILE=60000
 
