@@ -1,0 +1,10 @@
+[Unit]
+Description=Unmount GloBI Ramdisk
+After= globi-build-index.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/umount tmpfs0
+
+[Install]
+WantedBy= multi-user.target

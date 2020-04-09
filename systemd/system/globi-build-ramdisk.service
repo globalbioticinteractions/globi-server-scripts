@@ -1,0 +1,10 @@
+[Unit]
+Description=Build GloBI Ramdisk
+Before= globi-build-index.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/build-ramdisk.sh
+
+[Install]
+WantedBy= multi-user.target
