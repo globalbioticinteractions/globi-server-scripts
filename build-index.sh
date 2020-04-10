@@ -2,8 +2,6 @@
 set -e
 set -x
 
-source ~/.profile
-
 function create_tmp_dir {
   rm -rf $1
   mkdir -p $1
