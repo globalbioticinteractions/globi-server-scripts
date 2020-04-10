@@ -1,7 +1,7 @@
 [Unit]
 Description=Rebuild GloBI Indexes
-Requires=globi-mount-ramdisk.service globi-unmount-ramdisk.service
-After=globi-mount-ramdisk.service
+Requires=globi-build-ramdisk.service globi-unmount-ramdisk.service
+After=globi-build-ramdisk.service
 Before=globi-unmount-ramdisk.service
 
 
