@@ -1,6 +1,9 @@
 [Unit]
 Description=Rebuild GloBI Indexes
-After= elton.service
+Requires=globi-mount-ramdisk.service globi-unmount-ramdisk.service
+After=globi-mount-ramdisk.service
+Before=globi-unmount-ramdisk.service
+
 
 [Service]
 Type=oneshot

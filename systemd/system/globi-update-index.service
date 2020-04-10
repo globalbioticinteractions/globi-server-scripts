@@ -1,6 +1,7 @@
 [Unit]
 Description=Update GloBI Neo4j Index
-After= globi-build-index.service
+Requires=globi-build-index.service
+After=globi-build-index.service
 
 [Service]
 Type=oneshot
