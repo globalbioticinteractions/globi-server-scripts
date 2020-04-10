@@ -1,6 +1,5 @@
 [Unit]
 Description=Build GloBI Ramdisk
-Before= globi-build-index.service
 
 [Service]
 Type=oneshot

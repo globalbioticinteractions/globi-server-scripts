@@ -1,6 +1,5 @@
 [Unit]
 Description=Unmount GloBI Ramdisk
-After= globi-build-index.service
 
 [Service]
 Type=oneshot
