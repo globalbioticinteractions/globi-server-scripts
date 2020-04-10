@@ -1,5 +1,4 @@
 #!/bin/bash
-source ~/.profile
 if [ -z "$GLOBI_HOME" ]; then 
 	echo "please set GLOBI_HOME"
 	exit 1
