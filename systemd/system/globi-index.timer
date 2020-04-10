@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodically recreate GloBI Index
+
+[Timer]
+OnUnitActiveSec=2d
+RandomizedDelaySec=3600
+
+[Install]
+WantedBy=timers.target
