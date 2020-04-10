@@ -1,6 +1,4 @@
 #!/bin/bash
-source ~/.profile
-
 JETTY_HOME="$GLOBI_HOME/eol-globi-rest"
 JETTY_DIR="$JETTY_HOME/target"
 
