@@ -1,9 +1,0 @@
-[Unit]
-Description=GloBI Index Job
-#Wants=elton.service globi-build-ramdisk.service globi-build-index.service globi-update-index.service globi-unmount-ramdisk.service
-Wants=globi-build-ramdisk.service globi-unmount-ramdisk.service
-#After=elton.service globi-build-ramdisk.service globi-build-index.service globi-update-index.service globi-unmount-ramdisk.service
-After=globi-build-ramdisk.service globi-unmount-ramdisk.service
-
-[Install]
-Also=globi-index.timer
