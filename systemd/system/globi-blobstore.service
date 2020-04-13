@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 EnvironmentFile=/etc/globi/globi.conf
-ExecStart=/usr/local/bin/minio --port localhost:9000 /var/cache/minio
+ExecStart=/usr/local/bin/minio server --port localhost:9000 /var/cache/minio
 Restart=always
 User=minio
 

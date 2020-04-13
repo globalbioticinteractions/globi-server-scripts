@@ -99,7 +99,9 @@ sudo chmod +x /usr/local/bin/mc
 
 sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /etc/systemd/system/globi-blobstore.service
 
-
+sudo systemctl daemon-reload
+sudo systemctl enable globi-blobstore.service
+sudo systemctl start globi-blobstore.service
 
 ## install git 
 sudo apt install git
