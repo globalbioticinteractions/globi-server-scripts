@@ -90,18 +90,32 @@ minio (server) and mc (client)
 wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
 sudo chmod +x /usr/local/bin/minio
 
-#### mc - client
 
-wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
-sudo chmod +x /usr/local/bin/mc
+#### minio - server
 
-####
+make sure to replace MINIO keys in /etc/globi/globi.conf
 
 sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /etc/systemd/system/globi-blobstore.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable globi-blobstore.service
 sudo systemctl start globi-blobstore.service
+
+
+#### mc - client
+
+wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+sudo chmod +x /usr/local/bin/mc
+
+##### add local minio to client
+mc config host add minio http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_KEY]
+
+##### try make a "reviews" bucket
+mc mb minio/reviews
+
+## expect:
+## Bucket created successfully `minio/reviews`.
+
 
 ## install git 
 sudo apt install git
