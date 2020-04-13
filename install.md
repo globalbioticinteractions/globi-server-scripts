@@ -73,6 +73,33 @@ sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
 ```
 
+## install blob store
+
+GloBI uses https://min.io as a blobstore and front for s3 backend. 
+
+### make minio user
+sudo useradd -r -s /bin/false minio
+
+### make minio cache dir
+sudo mkdir -p /var/cache/minio
+sudo chmod minio:minio /var/cache/minio
+
+### install
+minio (server) and mc (client)
+
+wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
+sudo chmod +x /usr/local/bin/minio
+
+#### mc - client
+
+wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+sudo chmod +x /usr/local/bin/mc
+
+####
+
+sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /etc/systemd/system/globi-blobstore.service
+
+
 
 ## install git 
 sudo apt install git
@@ -87,7 +114,7 @@ sudo apt install maven
 ## 
 sudo useradd -r -s /bin/false globi
 
-## instead do,
+## install jdk
 apt install openjdk-8-jdk-headless
 
 ## server scripts and config

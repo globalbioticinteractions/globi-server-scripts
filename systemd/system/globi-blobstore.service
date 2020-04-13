@@ -1,0 +1,13 @@
+[Unit]
+Description=GloBI Blobstore
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+EnvironmentFile=/etc/globi/globi.conf
+ExecStart=/usr/local/bin/minio --port localhost:9000 /var/cache/minio
+Restart=always
+User=minio
+
+[Install]
+WantedBy=multi-user.target
