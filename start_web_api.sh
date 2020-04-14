@@ -3,6 +3,9 @@ JETTY_HOME="$GLOBI_HOME/eol-globi-rest"
 JETTY_DIR="$JETTY_HOME/target"
 
 cd "$GLOBI_HOME"
+echo updating git ...
+git pull --rebase
+
 echo jetty rebuilding...
 mvn clean package -pl eol-globi-rest -am -DskipTests 
 
