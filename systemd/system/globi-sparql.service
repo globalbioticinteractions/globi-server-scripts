@@ -1,0 +1,13 @@
+[Unit]
+Description=GloBI Sparql Endpoint
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+EnvironmentFile=/etc/globi/globi.conf
+ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/start-sparql-endpoint.sh
+Restart=always
+User=jhpoelen
+
+[Install]
+WantedBy=multi-user.target

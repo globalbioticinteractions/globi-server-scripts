@@ -167,3 +167,8 @@ sudo systemctl enable globi-update-index.service
 sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /etc/systemd/system/globi-api.service
 
 sudo systemctl enable globi-api.service 
+
+## install globi sparql endpoint
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /etc/systemd/system/globi-sparql.service
+
+sudo systemctl enable globi-sparql.service 
