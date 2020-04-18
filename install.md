@@ -68,7 +68,7 @@ sudo rm /etc/init.d/neo4j-service
 Now, install the systemd neo4j service
 
 ```
-sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /etc/systemd/service/neo4j.service
+sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /lib/systemd/service/neo4j.service
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
 ```
@@ -95,7 +95,7 @@ sudo chmod +x /usr/local/bin/minio
 
 make sure to replace MINIO keys in /etc/globi/globi.conf
 
-sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /etc/systemd/system/globi-blobstore.service
+sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /lib/systemd/system/globi-blobstore.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable globi-blobstore.service
@@ -144,31 +144,31 @@ sudo ln -s [server-scripts-dir]/globi.conf /etc/globi/globi.conf
 sudo useradd -r -s /bin/false elton
 sudo mkdir -p /var/cache/elton
 sudo chown elton:elton /var/cache/elton
-sudo ln -s [server-scripts-dir]/systemd/system/elton.service /etc/systemd/service/elton.service
-sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /etc/systemd/service/elton.timer
+sudo ln -s [server-scripts-dir]/systemd/system/elton.service /lib/systemd/service/elton.service
+sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /lib/systemd/service/elton.timer
 sudo systemctl daemon-reload
 sudo systemctl enable preston.timer
 sudo systemctl start preston.timer
 
 ## install globi build/update index services
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-ramdisk.service /etc/systemd/system/globi-build-ramdisk.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
 sudo systemctl enable globi-build-ramdisk.service
 
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-unmount-ramdisk.service /etc/systemd/system/globi-unmount-ramdisk.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-unmount-ramdisk.service /lib/systemd/system/globi-unmount-ramdisk.service
 sudo systemctl enable globi-unmount-ramdisk.service
 
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-index.service /etc/systemd/system/globi-build-index.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-index.service /lib/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-update-index.service /etc/systemd/system/globi-update-index.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-update-index.service /lib/systemd/system/globi-update-index.service
 sudo systemctl enable globi-update-index.service
 
 ## install globi web api service
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /etc/systemd/system/globi-api.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /lib/systemd/system/globi-api.service
 
 sudo systemctl enable globi-api.service 
 
 ## install globi sparql endpoint
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /etc/systemd/system/globi-sparql.service
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /lib/systemd/system/globi-sparql.service
 
 sudo systemctl enable globi-sparql.service 
