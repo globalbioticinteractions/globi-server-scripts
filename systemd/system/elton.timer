@@ -2,8 +2,9 @@
 Description=Periodically Run Elton
 
 [Timer]
-OnActiveSec=2d
+OnCalendar=Sat,Mon,Wed,Fri *-*-* 00:00:00
 RandomizedDelaySec=3600
+Persistent=true
 
 [Install]
 WantedBy=timers.target
