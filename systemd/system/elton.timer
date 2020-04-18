@@ -2,7 +2,7 @@
 Description=Periodically Run Elton
 
 [Timer]
-OnUnitActiveSec=2d
+OnActiveSec=2d
 RandomizedDelaySec=3600
 
 [Install]
