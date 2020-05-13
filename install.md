@@ -15,7 +15,7 @@ sudo add-apt-repository universe
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install certbot python3-certbot-nginx python3-certbot-dns-cloudflare
-sudo apt-get install build-essential
+sudo apt-get install build-essential git
 ```
 
 
@@ -68,7 +68,7 @@ sudo rm /etc/init.d/neo4j-service
 Now, install the systemd neo4j service
 
 ```
-sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /lib/systemd/service/neo4j.service
+sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /lib/systemd/system/neo4j.service
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
 ```
@@ -82,12 +82,12 @@ sudo useradd -r -s /bin/false minio
 
 ### make minio cache dir
 sudo mkdir -p /var/cache/minio
-sudo chmod minio:minio /var/cache/minio
+sudo chown minio:minio /var/cache/minio
 
 ### install
 minio (server) and mc (client)
 
-wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
+sudo wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
 sudo chmod +x /usr/local/bin/minio
 
 
@@ -104,7 +104,7 @@ sudo systemctl start globi-blobstore.service
 
 #### mc - client
 
-wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+sudo wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
 sudo chmod +x /usr/local/bin/mc
 
 ##### add local minio to client
@@ -125,6 +125,21 @@ sudo apt install git
 ## maven
 sudo apt install maven
 
+## add some users
+sudo adduser username
+
+usermod -aG sudo username
+
+cd /home/username/
+mkdir .ssh
+curl https://github.com/username.keys > .ssh/authorized_keys
+vi .ssh/authorized_keys
+chmod  700 .ssh/
+cd .ssh/
+chmod 600 authorized_keys 
+chown username:username -R /home/username/.ssh
+
+
 
 
 ## 
@@ -138,17 +153,22 @@ git clone http://github.com/jhpoelen/globi-server-scripts
 
 ## link configuration file
 sudo mkdir -p /etc/globi
-sudo ln -s [server-scripts-dir]/globi.conf /etc/globi/globi.conf
+sudo cp [server-scripts-dir]/globi.conf /etc/globi/globi.conf
+sudo chown root:root /etc/globi/globi.conf
+sudo chmod 600 /etc/globi/globi.conf
 
 ## install elton / create elton user without homedir and shell
 sudo useradd -r -s /bin/false elton
 sudo mkdir -p /var/cache/elton
 sudo chown elton:elton /var/cache/elton
-sudo ln -s [server-scripts-dir]/systemd/system/elton.service /lib/systemd/service/elton.service
-sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /lib/systemd/service/elton.timer
+
+// install elton commandline using https://github.com/globalbioticinteractions/elton
+
+sudo ln -s [server-scripts-dir]/systemd/system/elton.service /lib/systemd/system/elton.service
+sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /lib/systemd/system/elton.timer
 sudo systemctl daemon-reload
-sudo systemctl enable preston.timer
-sudo systemctl start preston.timer
+sudo systemctl enable elton.timer
+sudo systemctl start elton.timer
 
 ## install globi build/update index services
 sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
