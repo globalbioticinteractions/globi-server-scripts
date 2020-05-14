@@ -13,4 +13,4 @@ mvn clean install -pl eol-globi-rdf -am -Prdf
 
 echo fuseki starting...
 cd $FUSEKI_DIR
-java -Xmx12G -jar fuseki-server.jar --localhost --config="config.ttl" 
+java -Xmx16G -jar fuseki-server.jar --localhost --config="config.ttl" 
