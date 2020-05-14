@@ -6,6 +6,13 @@
 
 apt install nginx
 
+## re-use nginx configuration
+## remove default
+sudo rm /etc/nginx/sites-enabled/default
+sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+sudo ln -s [globi-server-scripts]/nginx/nginx.conf /etc/nginx/nginx.conf
+sudo ln -s [globi-server-scripts]/nginx/sites-enabled/globi.conf /etc/nginx/sites-enabled/globi.conf
+
 ## certbot
 
 ```
@@ -72,6 +79,19 @@ sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /lib/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
 ```
+
+Now, link the neo4j configuration:
+
+```
+sudo mv /etc/neo4j /etc/neo4j.backup
+sudo ln -s [globi-server-scripts]/neo4j /etc/neo4j
+```
+
+start neo4j
+```
+sudo systemctl start neo4j
+```
+
 
 ## install blob store
 
