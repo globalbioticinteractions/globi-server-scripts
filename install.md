@@ -125,6 +125,8 @@ sudo apt install git
 ## maven
 sudo apt install maven
 
+### configure maven settings.xml using [globi-scripts-dir]/.m2/settings.xml
+
 ## add some users
 sudo adduser username
 
@@ -161,6 +163,12 @@ sudo chmod 600 /etc/globi/globi.conf
 sudo useradd -r -s /bin/false elton
 sudo mkdir -p /var/cache/elton
 sudo chown elton:elton /var/cache/elton
+
+### bootstrapping from existing elton repository
+### this assumes that you have access to remote server
+### use [ssh-keygen] to generate keys and add them to remote server authorized_keys file 
+rsync -Pavz [some user]@[some globi server]:/var/cache/elton/datasets ./datasets
+
 
 // install elton commandline using https://github.com/globalbioticinteractions/elton
 
