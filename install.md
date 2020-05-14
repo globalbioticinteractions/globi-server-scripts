@@ -9,9 +9,7 @@ apt install nginx
 ## re-use nginx configuration
 ## remove default
 sudo rm /etc/nginx/sites-enabled/default
-sudo mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
-sudo ln -s [globi-server-scripts]/nginx/nginx.conf /etc/nginx/nginx.conf
-sudo ln -s [globi-server-scripts]/nginx/sites-enabled/globi.conf /etc/nginx/sites-enabled/globi.conf
+sudo ln -s [globi-server-scripts]/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
 
 ## certbot
 
