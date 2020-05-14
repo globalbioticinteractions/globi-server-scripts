@@ -15,7 +15,7 @@ sudo add-apt-repository universe
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install certbot python3-certbot-nginx python3-certbot-dns-cloudflare
-sudo apt-get install build-essential git
+sudo apt-get install build-essential git zip
 ```
 
 

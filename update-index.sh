@@ -8,6 +8,9 @@ GRAPH_DB_EXT=zip
 GRAPH_DB_ARCHIVE=$NEO4J_CACHE_DIR/graph.db.$GRAPH_DB_EXT
 GRAPH_DB_ARCHIVE_NEW=$NEO4J_CACHE_DIR/graph.db.new.$GRAPH_DB_EXT
 
+mkdir -p $NEO4J_CACHE_DIR
+chown neo4j:nogroup $NEO4J_CACHE_DIR
+
 # grab data
 cp $MAVEN_REPO/org/eol/eol-globi-datasets/1.0-SNAPSHOT/eol-globi-datasets-1.0-SNAPSHOT-neo4j-graph-db.$GRAPH_DB_EXT $GRAPH_DB_ARCHIVE_NEW
 chown neo4j:nogroup $GRAPH_DB_ARCHIVE_NEW 
