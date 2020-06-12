@@ -1,7 +1,5 @@
 [Unit]
 Description=Elton tracks species interaction datasets
-Requires=globi-build-index.service
-Before=globi-build-index.service
 
 [Service]
 Type=oneshot

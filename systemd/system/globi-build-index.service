@@ -1,8 +1,8 @@
 [Unit]
 Description=Rebuild GloBI Indexes
-Requires=globi-build-ramdisk.service globi-unmount-ramdisk.service
-After=globi-build-ramdisk.service
-Before=globi-unmount-ramdisk.service
+Requires=globi-build-ramdisk.service globi-unmount-ramdisk.service elton.service
+After=globi-build-ramdisk.service elton.service
+Before=globi-unmount-ramdisk.service 
 
 
 [Service]
