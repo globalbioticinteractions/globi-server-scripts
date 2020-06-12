@@ -1,5 +1,5 @@
 [Unit]
-Description=Periodically Run Elton
+Description=Periodically Update GloBI Index
 
 [Timer]
 OnCalendar=Sat,Mon,Wed,Fri *-*-* 00:00:00
