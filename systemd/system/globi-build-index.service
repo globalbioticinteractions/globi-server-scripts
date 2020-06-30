@@ -7,10 +7,10 @@ Before=globi-unmount-ramdisk.service
 
 [Service]
 Type=oneshot
-User=jhpoelen
+User=globi
 EnvironmentFile=/etc/globi/globi.conf
 WorkingDirectory=/var/cache/globi/
-ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/build-index.sh
+ExecStart=/bin/bash /etc/globi/build-index.sh
 LimitNOFILE=60000
 
 [Install]

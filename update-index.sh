@@ -2,7 +2,7 @@
 CACHE_DIR=/var/cache
 NEO4J_CACHE_DIR=$CACHE_DIR/neo4j
 NEO4J_CACHE_UPDATE_DIR=$CACHE_DIR/neo4j/update
-MAVEN_REPO=/home/jhpoelen/.m2/repository
+MAVEN_REPO=/var/cache/globi/repository
 
 GRAPH_DB_EXT=zip
 GRAPH_DB_ARCHIVE=$NEO4J_CACHE_DIR/graph.db.$GRAPH_DB_EXT

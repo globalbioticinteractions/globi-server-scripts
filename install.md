@@ -27,15 +27,35 @@ PermitRootLogin no
 
 To apply ```sudo systemctl reload ssh```
 
+## create globi user
+
+```
+sudo useradd -r -s /bin/false globi
+```
+
+## globi server scripts and config
+```
+sudo mkdir -p /var/lib/globi
+sudo chown globi:globi /var/lib/globi
+sudo -u globi git clone http://github.com/jhpoelen/globi-server-scripts /var/lib/globi
+sudo cp /var/lib/globi/globi.conf.template /etc/globi/globi.conf
+sudo chown root:root /etc/globi/globi.conf
+sudo chmod 600 /etc/globi/globi.conf
+```
+
+
 # install certbot
 
 create cloudflare.ini:
 ```
-mkdir -p /home/jhpoelen/.secret
-$ cat /home/jhpoelen/.secret/cloudflare.ini 
-dns_cloudflare_email = "XXX"
-dns_cloudflare_api_key = "XXXX"
+sudo cp /etc/globi/cloudflare.ini.template cloudflare.ini
 ```
+
+Then, edit and replace with your cloudflare api credentials:
+```
+sudo nano /etc/globi/cloudflare.ini
+```
+
 then run the certbot:
 
 ```
@@ -57,7 +77,7 @@ apt install nginx
 
 ```
 sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s [globi-server-scripts]/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
+sudo ln -s /etc/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
 ```
 
 
@@ -92,7 +112,7 @@ Now, link the neo4j configuration:
 
 ```
 sudo mv /etc/neo4j /etc/neo4j.backup
-sudo ln -s [globi-server-scripts]/neo4j /etc/neo4j
+sudo ln -s /etc/globi/neo4j /etc/neo4j
 ```
 
 start neo4j
@@ -127,7 +147,7 @@ sudo chmod +x /usr/local/bin/minio
 make sure to replace MINIO keys in /etc/globi/globi.conf
 
 ```
-sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /lib/systemd/system/globi-blobstore.service
+sudo ln -s /etc/globi/systemd/system/globi-blobstore.service /lib/systemd/system/globi-blobstore.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable globi-blobstore.service
@@ -152,18 +172,20 @@ mc mb minio/reviews
 ## expect:
 ## Bucket created successfully `minio/reviews`.
 
-
-## install git 
-```
-sudo apt install git
-```
-
 ## install rest api
 ## maven
 ```
 sudo apt install maven
 ```
-### configure maven settings.xml using [globi-scripts-dir]/.m2/settings.xml
+### configure maven settings.xml using a /etc/globi/.m2/settings.xml template
+
+```
+sudo cp /etc/globi/.m2/settings.xml.template /etc/globi/.m2/settings.xml
+sudo mkdir -p /var/cache/globi/repository
+sudo chown -R globi:globi /var/cache/globi
+
+```
+
 
 ## add some users
 ```
@@ -184,26 +206,11 @@ chown username:username -R /home/username/.ssh
 
 
 ## 
-```
-sudo useradd -r -s /bin/false globi
-```
 ## install jdk
 ```
 sudo apt install openjdk-8-jdk-headless
 ```
 
-## server scripts and config
-```
-git clone http://github.com/jhpoelen/globi-server-scripts
-```
-
-## link configuration file
-```
-sudo mkdir -p /etc/globi
-sudo cp [server-scripts-dir]/globi.conf /etc/globi/globi.conf
-sudo chown root:root /etc/globi/globi.conf
-sudo chmod 600 /etc/globi/globi.conf
-```
 ## install elton / create elton user without homedir and shell
 ```
 sudo useradd -r -s /bin/false elton

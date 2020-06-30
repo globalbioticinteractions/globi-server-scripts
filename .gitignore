@@ -4,6 +4,8 @@ tmp/
 .bash_history
 .bash_logout
 .gitconfig
+cloudflare.ini
+globi.conf
 .lesshst
 .ssh/
 .emacs.d/
