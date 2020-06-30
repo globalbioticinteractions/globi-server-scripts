@@ -105,7 +105,7 @@ sudo rm /etc/init.d/neo4j-service
 Now, install the systemd neo4j service
 
 ```
-sudo ln -s [server-scripts-dir]/systemd/system/neo4j.service /lib/systemd/system/neo4j.service
+sudo ln -s /var/lib/globi/systemd/system/neo4j.service /lib/systemd/system/neo4j.service
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
 ```
@@ -231,11 +231,9 @@ rsync -Pavz [some user]@[some globi server]:/var/cache/elton/datasets ./datasets
 // install elton commandline using https://github.com/globalbioticinteractions/elton
 
 ```
-sudo ln -s [server-scripts-dir]/systemd/system/elton.service /lib/systemd/system/elton.service
-sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /lib/systemd/system/elton.timer
+sudo ln -s /var/lib/globi/systemd/system/elton.service /lib/systemd/system/elton.service
 sudo systemctl daemon-reload
-sudo systemctl enable elton.timer
-sudo systemctl start elton.timer
+sudo systemctl enable elton
 ```
 
 ## install globi build/update index services
@@ -251,6 +249,10 @@ sudo systemctl enable globi-build-index.service
 
 sudo ln -s /var/lib/globi/systemd/system/globi-update-index.service /lib/systemd/system/globi-update-index.service
 sudo systemctl enable globi-update-index.service
+
+sudo ln -s /var/lib/globi/systemd/system/globi-update-index.timer /lib/systemd/system/globi-update-index.timer
+
+sudo systemctl enable globi-update-index.timer
 ```
 
 ## install globi web api service
