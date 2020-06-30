@@ -9,7 +9,7 @@ FUSEKI_DIR="$FUSEKI_HOME/target/apache-jena-fuseki-2.4.0"
 
 cd "$GLOBI_HOME"
 echo fuseki rebuilding...
-mvn clean install -pl eol-globi-rdf -am -Prdf
+mvn clean install -pl eol-globi-rdf -am -Prdf --settings /etc/globi/.m2/settings.xml
 
 echo fuseki starting...
 cd $FUSEKI_DIR
