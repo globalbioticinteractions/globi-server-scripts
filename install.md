@@ -177,10 +177,11 @@ mc mb minio/reviews
 ```
 sudo apt install maven
 ```
-### configure maven settings.xml using a /etc/globi/.m2/settings.xml template
+### configure maven settings.xml using a /var/lib/globi/.m2/settings.xml template
 
 ```
-sudo cp /etc/globi/.m2/settings.xml.template /etc/globi/.m2/settings.xml
+sudo mkdir -p /etc/globi/.m2/
+sudo cp /var/lib/globi/.m2/settings.xml.template /etc/globi/.m2/settings.xml
 sudo mkdir -p /var/cache/globi/repository
 sudo chown -R globi:globi /var/cache/globi
 
