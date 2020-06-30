@@ -7,7 +7,7 @@ Wants=network-online.target
 Restart=always
 User=globi
 EnvironmentFile=/etc/globi/globi.conf
-ExecStart=/bin/bash /etc/globi/start-sparql-endpoint.sh
+ExecStart=/bin/bash /var/lib/globi/start-sparql-endpoint.sh
 
 [Install]
 WantedBy=multi-user.target

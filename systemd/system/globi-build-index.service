@@ -10,7 +10,7 @@ Type=oneshot
 User=globi
 EnvironmentFile=/etc/globi/globi.conf
 WorkingDirectory=/var/cache/globi/
-ExecStart=/bin/bash /etc/globi/build-index.sh
+ExecStart=/bin/bash /var/lib/globi/build-index.sh
 LimitNOFILE=60000
 
 [Install]

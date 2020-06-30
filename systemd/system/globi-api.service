@@ -7,7 +7,7 @@ Wants=network-online.target
 Restart=always
 User=globi
 EnvironmentFile=/etc/globi/globi.conf
-ExecStart=/bin/bash /etc/globi/start-web-api.sh
+ExecStart=/bin/bash /var/lib/globi/start-web-api.sh
 
 [Install]
 WantedBy=multi-user.target

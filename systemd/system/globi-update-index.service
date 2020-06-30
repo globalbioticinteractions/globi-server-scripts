@@ -6,7 +6,7 @@ After=globi-build-index.service
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/globi/globi.conf
-ExecStart=/bin/bash /home/jhpoelen/globi-server-scripts/update-index.sh
+ExecStart=/bin/bash /var/lib/globi/update-index.sh
 
 [Install]
 WantedBy= multi-user.target
