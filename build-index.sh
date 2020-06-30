@@ -2,6 +2,8 @@
 set -e
 set -x
 
+SETTINGS="--settings /etc/globi/.m2/settings.xml"
+
 function create_tmp_dir {
   rm -rf $1
   mkdir -p $1
@@ -10,7 +12,7 @@ function create_tmp_dir {
 
 function export_dataset {
   cd $2
-  mvn clean -pl $1 -P$3
+  mvn clean -pl $1 -P$3 $SETTINGS
   # use ramdisk to improve write IO
   TMP_DATA_DIR=$1/target/data/
   RAM_GRAPH_DIR=$GLOBI_RAM_DISK/graph.db
@@ -20,7 +22,7 @@ function export_dataset {
   create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR 
   create_tmp_dir $RAM_MAPDB_DIR $TMP_DATA_DIR
   
-  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Ddataset.dir=${ELTON_DATASET_DIR}
+  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Ddataset.dir=${ELTON_DATASET_DIR} $SETTINGS
   # remove build results
   # mvn clean -pl $1 -P$3
 }
@@ -34,9 +36,9 @@ function rebuild {
   cd $1
   git pull --rebase
   # tests are executed on travis / dev machines
-  mvn clean install -pl eol-globi-neo4j-index -am -DskipTests
+  mvn clean install -pl eol-globi-neo4j-index -am -DskipTests $SETTINGS
   # remove intermediate build results
-  mvn clean -pl eol-globi-neo4j-index -am -DskipTests
+  mvn clean -pl eol-globi-neo4j-index -am -DskipTests $SETTINGS
 }
 
 function import_data {
