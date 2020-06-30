@@ -35,9 +35,11 @@ sudo useradd -r -s /bin/false globi
 
 ## globi server scripts and config
 ```
-sudo mkdir -p /var/lib/globi
-sudo chown globi:globi /var/lib/globi
+sudo mkdir -p /var/lib/globi /var/cache/globi
+sudo chown globi:globi /var/lib/globi /var/cache/globi
 sudo -u globi git clone http://github.com/jhpoelen/globi-server-scripts /var/lib/globi
+sudo -u globi git clone http://github.com/globalbioticinteractions/globalbioticinteractions /var/cache/globi/api
+sudo -u globi git clone http://github.com/globalbioticinteractions/globalbioticinteractions /var/cache/globi/index
 sudo cp /var/lib/globi/globi.conf.template /etc/globi/globi.conf
 sudo chown root:root /etc/globi/globi.conf
 sudo chmod 600 /etc/globi/globi.conf
@@ -238,29 +240,29 @@ sudo systemctl start elton.timer
 
 ## install globi build/update index services
 ```
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
+sudo ln -s /var/lib/globi/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
 sudo systemctl enable globi-build-ramdisk.service
 
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-unmount-ramdisk.service /lib/systemd/system/globi-unmount-ramdisk.service
+sudo ln -s /var/lib/globi/systemd/system/globi-unmount-ramdisk.service /lib/systemd/system/globi-unmount-ramdisk.service
 sudo systemctl enable globi-unmount-ramdisk.service
 
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-index.service /lib/systemd/system/globi-build-index.service
+sudo ln -s /var/lib/globi/systemd/system/globi-build-index.service /lib/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-update-index.service /lib/systemd/system/globi-update-index.service
+sudo ln -s /var/lib/globi/systemd/system/globi-update-index.service /lib/systemd/system/globi-update-index.service
 sudo systemctl enable globi-update-index.service
 ```
 
 ## install globi web api service
 ```
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /lib/systemd/system/globi-api.service
+sudo ln -s /var/lib/globi/systemd/system/globi-api.service /lib/systemd/system/globi-api.service
 
 sudo systemctl enable globi-api.service 
 ```
 
 ## install globi sparql endpoint
 ```
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-sparql.service /lib/systemd/system/globi-sparql.service
+sudo ln -s /var/lib/globi/systemd/system/globi-sparql.service /lib/systemd/system/globi-sparql.service
 
 sudo systemctl enable globi-sparql.service 
 ```
