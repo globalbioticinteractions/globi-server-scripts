@@ -44,13 +44,16 @@ To apply ```sudo systemctl reload ssh```
 # install certbot
 
 create cloudflare.ini:
+```
 $ cat /home/jhpoelen/.secret/cloudflare.ini 
 dns_cloudflare_email = "XXX"
 dns_cloudflare_api_key = "XXXX"
-
+```
 then run the certbot:
 
+```
 sudo certbot -a dns-cloudflare -i nginx --server https://acme-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org -d api.globalbioticinteractions.org -d neo4j.globalbioticinteractions.org -d lod.globalbioticinteractions.org -d blog.globalbioticinteractions.org
+```
 
 # staging certbot (not production)
 
@@ -101,56 +104,67 @@ sudo systemctl start neo4j
 GloBI uses https://min.io as a blobstore and front for s3 backend. 
 
 ### make minio user
+```
 sudo useradd -r -s /bin/false minio
-
+```
 ### make minio cache dir
+```
 sudo mkdir -p /var/cache/minio
 sudo chown minio:minio /var/cache/minio
-
+```
 ### install
 minio (server) and mc (client)
 
+```
 sudo wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
 sudo chmod +x /usr/local/bin/minio
-
+```
 
 #### minio - server
 
 make sure to replace MINIO keys in /etc/globi/globi.conf
 
+```
 sudo ln -s [globi-server-scripts]/systemd/system/globi-blobstore.service /lib/systemd/system/globi-blobstore.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable globi-blobstore.service
 sudo systemctl start globi-blobstore.service
-
+```
 
 #### mc - client
 
+```
 sudo wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
 sudo chmod +x /usr/local/bin/mc
+```
 
 ##### add local minio to client
+```
 mc config host add minio http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_KEY]
-
+```
 ##### try make a "reviews" bucket
+```
 mc mb minio/reviews
-
+```
 ## expect:
 ## Bucket created successfully `minio/reviews`.
 
 
 ## install git 
+```
 sudo apt install git
-
+```
 
 ## install rest api
 ## maven
+```
 sudo apt install maven
-
+```
 ### configure maven settings.xml using [globi-scripts-dir]/.m2/settings.xml
 
 ## add some users
+```
 sudo adduser username
 
 usermod -aG sudo username
@@ -163,15 +177,18 @@ chmod  700 .ssh/
 cd .ssh/
 chmod 600 authorized_keys 
 chown username:username -R /home/username/.ssh
-
+```
 
 
 
 ## 
+```
 sudo useradd -r -s /bin/false globi
-
+```
 ## install jdk
+```
 apt install openjdk-8-jdk-headless
+```
 
 ## server scripts and config
 git clone http://github.com/jhpoelen/globi-server-scripts
