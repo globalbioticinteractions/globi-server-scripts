@@ -4,12 +4,17 @@
 
 ## install nginx
 
+```
 apt install nginx
+```
 
 ## re-use nginx configuration
 ## remove default
+
+```
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s [globi-server-scripts]/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
+```
 
 ## certbot
 
