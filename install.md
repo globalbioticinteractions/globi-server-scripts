@@ -2,20 +2,6 @@
 
 (incomplete install instructions used as personal notes)
 
-## install nginx
-
-```
-apt install nginx
-```
-
-## re-use nginx configuration
-## remove default
-
-```
-sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s [globi-server-scripts]/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
-```
-
 ## certbot
 
 ```
@@ -45,6 +31,7 @@ To apply ```sudo systemctl reload ssh```
 
 create cloudflare.ini:
 ```
+mkdir -p /home/jhpoelen/.secret
 $ cat /home/jhpoelen/.secret/cloudflare.ini 
 dns_cloudflare_email = "XXX"
 dns_cloudflare_api_key = "XXXX"
@@ -58,6 +45,21 @@ sudo certbot -a dns-cloudflare -i nginx --server https://acme-v02.api.letsencryp
 # staging certbot (not production)
 
 sudo certbot -a dns-cloudflare -i nginx --server https://acme-staging-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org -d api.globalbioticinteractions.org -d neo4j.globalbioticinteractions.org -d lod.globalbioticinteractions.org -d blog.globalbioticinteractions.org
+
+## install nginx
+
+```
+apt install nginx
+```
+
+## re-use nginx configuration
+## remove default
+
+```
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s [globi-server-scripts]/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
+```
+
 
 ## install neo4j
 
