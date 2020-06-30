@@ -189,38 +189,47 @@ sudo useradd -r -s /bin/false globi
 ```
 ## install jdk
 ```
-apt install openjdk-8-jdk-headless
+sudo apt install openjdk-8-jdk-headless
 ```
 
 ## server scripts and config
+```
 git clone http://github.com/jhpoelen/globi-server-scripts
+```
 
 ## link configuration file
+```
 sudo mkdir -p /etc/globi
 sudo cp [server-scripts-dir]/globi.conf /etc/globi/globi.conf
 sudo chown root:root /etc/globi/globi.conf
 sudo chmod 600 /etc/globi/globi.conf
-
+```
 ## install elton / create elton user without homedir and shell
+```
 sudo useradd -r -s /bin/false elton
 sudo mkdir -p /var/cache/elton
 sudo chown elton:elton /var/cache/elton
+```
 
 ### bootstrapping from existing elton repository
 ### this assumes that you have access to remote server
 ### use [ssh-keygen] to generate keys and add them to remote server authorized_keys file 
+```
 rsync -Pavz [some user]@[some globi server]:/var/cache/elton/datasets ./datasets
-
+```
 
 // install elton commandline using https://github.com/globalbioticinteractions/elton
 
+```
 sudo ln -s [server-scripts-dir]/systemd/system/elton.service /lib/systemd/system/elton.service
 sudo ln -s [server-scripts-dir]/systemd/system/elton.timer /lib/systemd/system/elton.timer
 sudo systemctl daemon-reload
 sudo systemctl enable elton.timer
 sudo systemctl start elton.timer
+```
 
 ## install globi build/update index services
+```
 sudo ln -s [globi-scripts-dir]/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
 sudo systemctl enable globi-build-ramdisk.service
 
@@ -232,13 +241,18 @@ sudo systemctl enable globi-build-index.service
 
 sudo ln -s [globi-scripts-dir]/systemd/system/globi-update-index.service /lib/systemd/system/globi-update-index.service
 sudo systemctl enable globi-update-index.service
+```
 
 ## install globi web api service
+```
 sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /lib/systemd/system/globi-api.service
 
 sudo systemctl enable globi-api.service 
+```
 
 ## install globi sparql endpoint
-sudo ln -s [globi-scripts-dir]/systemd/system/globi-api.service /lib/systemd/system/globi-sparql.service
+```
+sudo ln -s [globi-scripts-dir]/systemd/system/globi-sparql.service /lib/systemd/system/globi-sparql.service
 
 sudo systemctl enable globi-sparql.service 
+```
