@@ -13,4 +13,4 @@ mvn clean install -pl eol-globi-rdf -am -Prdf --settings /etc/globi/.m2/settings
 
 echo fuseki starting...
 cd $FUSEKI_DIR
-java -Xmx16G -jar fuseki-server.jar --localhost --config="config.ttl" 
+java -Xmx18G -jar fuseki-server.jar --localhost --config="config.ttl" 
