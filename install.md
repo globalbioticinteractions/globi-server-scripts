@@ -79,7 +79,7 @@ apt install nginx
 
 ```
 sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /etc/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
+sudo ln -s /var/lib/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enabled/globi.conf
 ```
 
 
