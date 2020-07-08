@@ -149,7 +149,7 @@ sudo chmod +x /usr/local/bin/minio
 make sure to replace MINIO keys in /etc/globi/globi.conf
 
 ```
-sudo ln -s /etc/globi/systemd/system/globi-blobstore.service /lib/systemd/system/globi-blobstore.service
+sudo ln -s /var/lib/globi/systemd/system/globi-blobstore.service /lib/systemd/system/globi-blobstore.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable globi-blobstore.service
