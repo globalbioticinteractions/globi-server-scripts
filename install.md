@@ -114,7 +114,7 @@ Now, link the neo4j configuration:
 
 ```
 sudo mv /etc/neo4j /etc/neo4j.backup
-sudo ln -s /etc/globi/neo4j /etc/neo4j
+sudo ln -s /var/lib/globi/neo4j /etc/neo4j
 ```
 
 start neo4j
