@@ -193,18 +193,18 @@ sudo chown -R globi:globi /var/cache/globi
 
 ## add some users
 ```
-sudo adduser username
+sudo adduser [username]
 
-usermod -aG sudo username
+sudo usermod -aG sudo [username]
 
 cd /home/username/
 mkdir .ssh
-curl https://github.com/username.keys > .ssh/authorized_keys
+curl https://github.com/[username].keys > .ssh/authorized_keys
 vi .ssh/authorized_keys
 chmod  700 .ssh/
 cd .ssh/
 chmod 600 authorized_keys 
-chown username:username -R /home/username/.ssh
+chown [username]:[username] -R /home/[username]/.ssh
 ```
 
 
