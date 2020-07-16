@@ -197,7 +197,8 @@ sudo adduser [username]
 
 sudo usermod -aG sudo [username]
 
-cd /home/username/
+sudo -u [username] /bin/bash
+cd /home/[username]/
 mkdir .ssh
 curl https://github.com/[username].keys > .ssh/authorized_keys
 vi .ssh/authorized_keys
