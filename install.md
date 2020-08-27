@@ -97,6 +97,16 @@ sudo apt install neo4j=2.3.12
 # prevent neo4j from being automagically upgraded to latest version
 sudo apt-mark hold neo4j 
 ```
+
+### boostrap neo4j data
+
+Neo4j server runs with a readonly copy of a pre-generated neo4j db. If you have an existing server and want to boostrap the neo4j instance use:
+
+```
+
+sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some server]:/var/cache/neo4j/ /var/cache/
+```
+
 ### create neo4j systemd service
 
 Make sure to stop and disable the default ```/etc/init.d/neo4j-service``` that comes with the debian package - 
@@ -181,6 +191,16 @@ mc mb minio/reviews
 
 ## install rest api
 ## maven
+
+### bootstrap maven repository
+Have an existing GloBI server and want to migrate existing repository folder:
+
+```
+sudo -u globi mkdir -p /var/cache/globi/repository
+sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some path]:/var/cache/globi/repository /var/cache/globi
+```
+
+### install maven binaries
 ```
 sudo apt install maven
 ```
