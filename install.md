@@ -90,7 +90,10 @@ wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 
-apt install neo4j=2.3.12
+sudo apt install neo4j=2.3.12
+# https://linoxide.com/linux-how-to/exclude-specific-package-apt-get-upgrade/ 
+# prevent neo4j from being automagically upgraded to latest version
+sudo apt-mark hold neo4j 
 ```
 ### create neo4j systemd service
 
