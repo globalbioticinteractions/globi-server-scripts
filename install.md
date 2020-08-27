@@ -50,7 +50,9 @@ sudo chmod 600 /etc/globi/globi.conf
 
 create cloudflare.ini:
 ```
-sudo cp /etc/globi/cloudflare.ini.template cloudflare.ini
+sudo cp /etc/globi/cloudflare.ini.template /etc/globi/cloudflare.ini
+sudo chown root:root /etc/globi/cloudflare.ini
+sudo chmod 600 /etc/globi/cloudflare.ini
 ```
 
 Then, edit and replace with your cloudflare api credentials:
@@ -226,11 +228,12 @@ sudo mkdir -p /var/cache/elton
 sudo chown elton:elton /var/cache/elton
 ```
 
-### bootstrapping from existing elton repository
+### use rsync to bootstrap from existing elton repository
 ### this assumes that you have access to remote server
 ### use [ssh-keygen] to generate keys and add them to remote server authorized_keys file 
+
 ```
-rsync -Pavz [some user]@[some globi server]:/var/cache/elton/datasets ./datasets
+sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some server]:/var/cache/elton/datasets /var/cache/elton/
 ```
 
 // install elton commandline using https://github.com/globalbioticinteractions/elton
