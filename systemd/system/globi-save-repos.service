@@ -1,7 +1,5 @@
 [Unit]
 Description=Attempt to save Elton repos
-Requires=globi-build-index.service
-After=globi-build-index.service
 
 [Service]
 Type=oneshot
