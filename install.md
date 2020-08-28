@@ -283,6 +283,17 @@ sudo ln -s /var/lib/globi/systemd/system/globi-update-index.timer /lib/systemd/s
 sudo systemctl enable globi-update-index.timer
 ```
 
+## install save Elton repos timers
+```
+sudo ln -s /var/lib/globi/systemd/system/globi-save-repos.service /lib/systemd/system/globi-save-repos.service
+sudo systemctl enable globi-save-repos.service
+
+sudo ln -s /var/lib/globi/systemd/system/globi-save-repos.timer /lib/systemd/system/globi-save-repos.timer
+sudo systemctl enable globi-save-repos.timer
+sudo systemctl start globi-save-repos.timer
+```
+
+
 ## install globi web api service
 ```
 sudo ln -s /var/lib/globi/systemd/system/globi-api.service /lib/systemd/system/globi-api.service
