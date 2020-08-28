@@ -5,4 +5,4 @@
 
 REPOS=$(elton ls --cache-dir=/var/cache/elton/datasets) 
 
-echo $REPOS | xargs -L1 -I{} echo curl -XPOST -L --verbose "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/{}"
+echo -e "$REPOS" | xargs -L1 -I{} echo curl -XPOST -L --verbose "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/{}"
