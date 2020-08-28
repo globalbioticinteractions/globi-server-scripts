@@ -4,8 +4,8 @@
 #
 
 
-function request_save {
-  curl -XPOST -L --verbose "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/$1"
+request_save() {
+  curl -XPOST -L --verbose -i "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/$1"
 }
 
 REPOS=$(elton ls --cache-dir=/var/cache/elton/datasets)
