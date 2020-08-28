@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically Request to Save Elton Repos
+
+[Timer]
+OnCalendar=*-*-* 2/14:00:00
+RandomizedDelaySec=3600
+Persistent=true
+
+[Install]
+WantedBy=timers.target

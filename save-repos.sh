@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Requests GloBI dataset registration repositories to be registered with the https://softwareheritage.org .
+# Request to save Elton repositories in the https://archive.softwareheritage.org .
+#
 #
 
 
@@ -8,7 +9,7 @@ request_save() {
   echo -e "$1" | xargs -L1 -I{} curl -XPOST -L --verbose -i "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/{}"
 }
 
-REPOS=$(elton ls --cache-dir=/var/cache/elton/datasets)
+REPOS=$(elton ls --cache-dir=${ELTON_DATASET_DIR:=/var/cache/elton/datasets})
 
 REPO_FIRST=$(echo -e "$REPOS" | shuf -n 1)
 
