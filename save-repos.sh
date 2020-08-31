@@ -6,7 +6,7 @@
 
 
 request_save() {
-  echo -e "$1" | xargs -L1 -I{} curl -XPOST -L --verbose -i "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/{}"
+  echo -e "$1" | xargs -L1 -I{} curl -XPOST -L -i "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/{}"
 }
 
 REPOS=$(elton ls --cache-dir=${ELTON_DATASET_DIR:=/var/cache/elton/datasets})
