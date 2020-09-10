@@ -14,6 +14,8 @@ if [ $(echo -e ${DATASETS_NEW} | wc -m) -gt 0 ]
 then
   echo "found new datasets"
   echo -e "${DATASETS_NEW}" | xargs elton update --no-progress
+  exit 0
 else
   echo "no new datasets found: not updating"
+  exit 1
 fi
