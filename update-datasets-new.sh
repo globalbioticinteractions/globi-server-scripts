@@ -8,7 +8,7 @@ DATASETS_ONLINE=$(elton ls --online --no-progress | sort | uniq | grep -v "^loca
 DATASETS_LOCAL=$(elton ls --no-progress | sort | uniq | grep -v "^local$")
 
 # note the "!" operator stops the script when no new datasets are found
-DATASETS_NEW=$(diff --changed-group-format='%>' --unchanged-group-format='' <(echo -e "${DATASETS_LOCAL}") <(echo -e "${DATASETS_ONLINE}") | true)
+DATASETS_NEW=$(diff --changed-group-format='%>' --unchanged-group-format='' <(echo -e "${DATASETS_LOCAL}") <(echo -e "${DATASETS_ONLINE}"))
 
 if [ $(echo -e ${DATASETS_NEW} | wc -l) -gt 0 ]
 then
