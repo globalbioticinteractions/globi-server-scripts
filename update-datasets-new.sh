@@ -10,4 +10,5 @@ DATASETS_LOCAL=$(elton ls --cache-dir ${CACHE_DIR} | sort | uniq | grep -v "^loc
 
 DATASETS_NEW=$(diff --changed-group-format='%>' --unchanged-group-format='' <(echo -e "${DATASETS_LOCAL}") <(echo -e "${DATASETS_ONLINE}"))
 
-echo -e "${DATASETS_NEW}" | xargs -L1 elton update 
+echo -e "${DATASETS_NEW}" | xargs elton update
+
