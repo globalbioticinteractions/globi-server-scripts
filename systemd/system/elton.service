@@ -6,7 +6,7 @@ Type=oneshot
 User=elton
 EnvironmentFile=/etc/globi/globi.conf
 WorkingDirectory=/var/cache/elton
-ExecStart=/usr/local/bin/elton update --no-progress
+ExecStart=/bin/bash /var/lib/globi/update-datasets-new.sh
 
 [Install]
 WantedBy= multi-user.target
