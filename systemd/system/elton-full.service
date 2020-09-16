@@ -1,0 +1,12 @@
+[Unit]
+Description=Elton tracks species interaction datasets
+
+[Service]
+Type=oneshot
+User=elton
+EnvironmentFile=/etc/globi/globi.conf
+WorkingDirectory=/var/cache/elton
+ExecStart=/bin/bash /var/lib/globi/update-datasets-all.sh
+
+[Install]
+WantedBy= multi-user.target
