@@ -3,4 +3,6 @@
 # Updates all datasets.
 #
 set -x
-elton update --no-progress
+DATASETS_ONLINE=$(elton ls --online --no-progress | sort | uniq | grep -v "^local$")
+
+echo $DATASETS_ONLINE | xargs elton update --no-progress
