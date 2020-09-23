@@ -1,9 +1,0 @@
-[Unit]
-Description=Build GloBI Ramdisk
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash /var/lib/globi/build-ramdisk.sh
-
-[Install]
-WantedBy= multi-user.target
