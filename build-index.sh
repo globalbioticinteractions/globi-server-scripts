@@ -4,21 +4,6 @@ set -x
 
 SETTINGS="--settings /etc/globi/.m2/settings.xml"
 
-function unmount_ramdisk {
-  /bin/umount tmpfs0
-}
-
-function create_ramdisk {
-  local RAM_DISK=$GLOBI_RAM_DISK
-  unmount_ramdisk
-  /bin/rm -rf $RAM_DISK
-  /bin/mkdir -p $RAM_DISK
-  /bin/mount -t tmpfs -o size=20G tmpfs0 $RAM_DISK
-
-  /bin/chown -R globi:globi $RAM_DISK
-  /bin/chmod -R g+rwx $RAM_DISK
-}
-
 function create_tmp_dir {
   rm -rf $1
   mkdir -p $1
@@ -79,11 +64,8 @@ function deploy_data {
  export_dataset eol-globi-datasets $1 "generate-datasets,deploy-remote" install
 }
 
-create_ramdisk
 
 import_data $GLOBI_CACHE
 link_data $GLOBI_CACHE
 export_data $GLOBI_CACHE
 #deploy_data $GLOBI_CACHE
-
-unmount_ramdisk

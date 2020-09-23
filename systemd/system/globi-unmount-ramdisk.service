@@ -1,0 +1,9 @@
+[Unit]
+Description=Unmount GloBI Ramdisk
+
+[Service]
+Type=oneshot
+ExecStart=/bin/umount tmpfs0
+
+[Install]
+WantedBy= multi-user.target
