@@ -269,9 +269,6 @@ sudo systemctl enable elton
 sudo ln -s /var/lib/globi/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
 sudo systemctl enable globi-build-ramdisk.service
 
-sudo ln -s /var/lib/globi/systemd/system/globi-unmount-ramdisk.service /lib/systemd/system/globi-unmount-ramdisk.service
-sudo systemctl enable globi-unmount-ramdisk.service
-
 sudo ln -s /var/lib/globi/systemd/system/globi-build-index.service /lib/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
