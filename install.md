@@ -304,3 +304,35 @@ sudo ln -s /var/lib/globi/systemd/system/globi-sparql.service /lib/systemd/syste
 
 sudo systemctl enable globi-sparql.service 
 ```
+
+## Amazon S3
+
+Even though GloBI is in the process of deprecating use of S3 for ethical and economic reasons, the following bucket policy is used to restrict public access to buckets to known server addresses. This is to avoid potentially limitless bills for data transfer out of S3
+
+```
+{
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Sid": "AddPerm",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": [
+                "arn:aws:s3:::globi/release/*",
+                "arn:aws:s3:::globi/datasets/*",
+                "arn:aws:s3:::globi/reviews/*",
+                "arn:aws:s3:::globi/snapshot/*"
+            ],
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": [
+                        "IPV6 ADDRESS HERE",
+                        "IPV4 ADDRESS HERE"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
