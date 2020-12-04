@@ -11,6 +11,16 @@
         "arn:aws:s3:::globi/release/*"
       ],
       "Sid": ""
+    },
+    {
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::globi"
+      ],
+      "Sid": ""
     }
   ]
 }
