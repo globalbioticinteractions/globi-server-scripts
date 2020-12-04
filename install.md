@@ -182,19 +182,25 @@ sudo chmod +x /usr/local/bin/mc
 ```
 mc config host add globi http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_KEY]
 
-mc admin user add globi [USER_ACCESS_KEY] [USER_SECRET_KEY]
+mc admin user add globi [REVIEW_USER_ACCESS_KEY] [REVIEW_USER_SECRET_KEY]
 
-mc admin group add globi review-users [USER_ACCESS_KEY]
+mc admin group add globi review-users [REVIEW_USER_ACCESS_KEY]
 mc admin policy add globi write-reviews-only policy/write-reviews-only.json
 mc admin policy set globi write-reviews-only group=review-users
-mc config host add globi-reviews http://localhost:9000 [USER_ACCESS_KEY] [USER_SECRET_KEY] --api s3v4
+mc config host add globi-reviews http://localhost:9000 [REVIEW_USER_ACCESS_KEY] [REVIEW_USER_SECRET_KEY] --api s3v4
+
+mc admin user add globi [RELEASE_USER_ACCESS_KEY] [RELEASE_USER_SECRET_KEY]
+mc admin group add globi release-users [RELEASE_USER_ACCESS_KEY]
+mc admin policy add globi readwrite-release policy/readwrite-releases.json
+mc admin policy set globi readwrite-release group=release-users
+
 ```
 ##### try make a "reviews" bucket
 ```
-mc mb minio/reviews
-mc mb minio/snapshot
-mc mb minio/release
-mc mb minio/datasets
+mc mb globi/reviews
+mc mb globi/snapshot
+mc mb globi/release
+mc mb globi/datasets
 ```
 ## expect:
 ## Bucket created successfully `minio/reviews`.
