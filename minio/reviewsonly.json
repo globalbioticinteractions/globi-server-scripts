@@ -1,0 +1,15 @@
+{
+  "Version": "2020-12-04",
+  "Statement": [
+    {
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::reviews/*"
+      ],
+      "Sid": ""
+    }
+  ]
+}
