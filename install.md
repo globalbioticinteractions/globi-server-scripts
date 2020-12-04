@@ -180,11 +180,14 @@ sudo chmod +x /usr/local/bin/mc
 
 ##### add local minio to client
 ```
-mc config host add minio http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_KEY]
+mc config host add globi http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_KEY]
 ```
 ##### try make a "reviews" bucket
 ```
 mc mb minio/reviews
+mc mb minio/snapshot
+mc mb minio/release
+mc mb minio/datasets
 ```
 ## expect:
 ## Bucket created successfully `minio/reviews`.
