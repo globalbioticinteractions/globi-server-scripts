@@ -1,0 +1,18 @@
+{
+  "Version": "2020-12-04",
+  "Statement": [
+    {
+      "Action": [
+        "s3:PutObject",
+        "s3:ListObjects",
+        "s3:ListObjectsV2",
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::globi/release/*"
+      ],
+      "Sid": ""
+    }
+  ]
+}

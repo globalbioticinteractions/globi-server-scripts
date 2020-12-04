@@ -184,9 +184,10 @@ mc config host add globi http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_
 
 mc admin user add globi [USER_ACCESS_KEY] [USER_SECRET_KEY]
 
-mc admin group add globi dropbox-users [USER_ACCESS_KEY]
-mc admin policy set globi readwrite group=dropbox-users
-mc config host add dropbox http://localhost:9000 [USER_ACCESS_KEY] [USER_SECRET_KEY] --api s3v4
+mc admin group add globi review-users [USER_ACCESS_KEY]
+mc admin policy add globi write-reviews-only minio/write-reviews-only.json
+mc admin policy set globi write-reviews-only group=review-users
+mc config host add globi-reviews http://localhost:9000 [USER_ACCESS_KEY] [USER_SECRET_KEY] --api s3v4
 ```
 ##### try make a "reviews" bucket
 ```
