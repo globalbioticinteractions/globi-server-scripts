@@ -22,7 +22,7 @@ function export_dataset {
   create_tmp_dir $RAM_GRAPH_DIR $TMP_DATA_DIR 
   create_tmp_dir $RAM_MAPDB_DIR $TMP_DATA_DIR
   
-  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Ddataset.dir=${ELTON_DATASET_DIR} -Dglobi.snapshotRepository.url=${GLOBI_SNAPSHOT_REPOSITORY_URL} $SETTINGS
+  nice mvn $4 -pl $1 -P$3 -Dneo4j.data.dir=$RAM_GRAPH_DIR -Ddataset.dir=${ELTON_DATASET_DIR} $SETTINGS
   # remove build results
   # mvn clean -pl $1 -P$3
 }

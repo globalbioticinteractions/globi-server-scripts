@@ -13,9 +13,6 @@ GLOBI_HOME=/var/cache/globi/api
 # used by elton and globi-build-index
 ELTON_DATASET_DIR=/var/cache/elton/datasets
 
-# used by index building to publish intermediate snapshot results
-GLOBI_SNAPSHOT_REPOSITORY_URL=file:///var/cache/minio/snapshot
-
 # blobstore access keys
 MINIO_ACCESS_KEY=REPLACE_ME
 MINIO_SECRET_KEY=REPLACE_ME
