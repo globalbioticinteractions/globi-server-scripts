@@ -2,7 +2,7 @@
 Description=Update all datasets
 
 [Timer]
-OnCalendar=Sat,Mon,Wed,Fri *-*-* 00:00:00
+OnCalendar=Sat *-*-* 00:00:00
 RandomizedDelaySec=3600
 Persistent=true
 
