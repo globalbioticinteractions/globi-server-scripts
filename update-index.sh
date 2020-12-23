@@ -26,6 +26,7 @@ else
   echo $(date) installing new neo4j data index...
   sudo -u neo4j mv $NEO4J_CACHE_DIR/graph.db $NEO4J_CACHE_UPDATE_DIR/graph.db.old
   sudo -u neo4j mv $NEO4J_CACHE_UPDATE_DIR/graph.db $NEO4J_CACHE_DIR/graph.db
+  sudo -u neo4j rm -rf $NEO4J_CACHE_UPDATE_DIR/graph.db.old
   echo $(date) installing new neo4j data index done.
   sudo /usr/sbin/service neo4j start
   echo $(date) resetting nginx cache...
