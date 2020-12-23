@@ -12,14 +12,14 @@ mkdir -p $NEO4J_CACHE_DIR
 chown neo4j:nogroup $NEO4J_CACHE_DIR
 
 # grab data
-cp $MAVEN_REPO/org/eol/eol-globi-datasets/1.0-SNAPSHOT/eol-globi-datasets-1.0-SNAPSHOT-neo4j-graph-db.$GRAPH_DB_EXT $GRAPH_DB_ARCHIVE_NEW
-chown neo4j:nogroup $GRAPH_DB_ARCHIVE_NEW 
+GRAPH_DB_SNAPSHOT="$MAVEN_REPO/org/eol/eol-globi-datasets/1.0-SNAPSHOT/eol-globi-datasets-1.0-SNAPSHOT-neo4j-graph-db.$GRAPH_DB_EXT"
 
-if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_ARCHIVE_NEW >/dev/null ; then
+if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_SNAPSHOT >/dev/null ; then
   echo File same, no update needed
 else
   echo File different updating
-  sudo -u neo4j cp $GRAPH_DB_ARCHIVE_NEW $GRAPH_DB_ARCHIVE
+  cp $GRAPH_DB_SNAPSHOT $GRAPH_DB_ARCHIVE
+  chown neo4j:nogroup $GRAPH_DB_ARCHIVE 
   sudo -u neo4j rm -rf $NEO4J_CACHE_UPDATE_DIR && sudo -u neo4j mkdir -p $NEO4J_CACHE_UPDATE_DIR
   sudo -u neo4j unzip $GRAPH_DB_ARCHIVE -d $NEO4J_CACHE_UPDATE_DIR
   sudo /usr/sbin/service neo4j stop
