@@ -25,6 +25,13 @@ PasswordAuthentication no
 PermitRootLogin no
 ```
 
+### disable syslog
+
+prevents filling up your system with logs - instead, just stick with using systemd's journal :
+
+```sudo systemctl disable syslog.socket```
+
+
 To apply ```sudo systemctl reload ssh```
 
 ## create globi user
