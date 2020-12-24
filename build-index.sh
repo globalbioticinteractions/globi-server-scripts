@@ -55,7 +55,7 @@ function link_data {
 function export_data {
  # then export it, deploy artifacts to remote maven repository
  rebuild $1
- export_dataset eol-globi-datasets $1 "generate-datasets,export-all" install
+ export_dataset eol-globi-datasets $1 "generate-datasets,export-all" deploy
 }
 
 function deploy_data {
