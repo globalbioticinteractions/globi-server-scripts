@@ -10,7 +10,7 @@ function create_tmp_dir {
   ln -s $1 $2
 }
 
-function export_dataset {
+function process_dataset {
   cd $2
   mvn clean -pl $1 -P$3 $SETTINGS
   # use ramdisk to improve write IO
@@ -44,24 +44,27 @@ function rebuild {
 function import_data {
   # build dataset first, install locally
   rebuild $1
-  export_dataset eol-globi-datasets $1 generate-datasets install 
+  process_dataset eol-globi-datasets $1 generate-datasets install 
 }
 
 function link_data {
   rebuild $1
-  export_dataset eol-globi-datasets $1 "generate-datasets,link" install
+  # deploy linked data to keep a trace of snapshot versions
+  process_dataset eol-globi-datasets $1 "generate-datasets,link" deploy
 }
 
 function export_data {
  # then export it, deploy artifacts to remote maven repository
  rebuild $1
- export_dataset eol-globi-datasets $1 "generate-datasets,export-all" deploy
+ # install data products: this actually custom deploys artifacts, 
+ # circumventing the generation of snapshot dated versions
+ process_dataset eol-globi-datasets $1 "generate-datasets,export-all" install
 }
 
 function deploy_data {
  # then export it, deploy to remove non-repository servers (e.g. ncbi linkout)
  rebuild $1
- export_dataset eol-globi-datasets $1 "generate-datasets,deploy-remote" install
+ process_dataset eol-globi-datasets $1 "generate-datasets,deploy-remote" install
 }
 
 
