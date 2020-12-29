@@ -321,6 +321,15 @@ sudo ln -s /var/lib/globi/systemd/system/globi-api.service /lib/systemd/system/g
 sudo systemctl enable globi-api.service 
 ```
 
+## install globi dataset review services
+
+sudo ln -s /var/lib/globi/systemd/system/globi-review.service /lib/systemd/system/globi-review.service
+sudo systemctl enable globi-review.service
+
+sudo ln -s /var/lib/globi/systemd/system/globi-review.timer /lib/systemd/system/globi-review.timer
+sudo systemctl enable globi-review.timer
+
+
 ## install globi sparql endpoint
 ```
 sudo ln -s /var/lib/globi/systemd/system/globi-sparql.service /lib/systemd/system/globi-sparql.service
