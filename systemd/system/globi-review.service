@@ -1,7 +1,7 @@
 [Unit]
 Description=Review GloBI Indexed Datasets
-Requires=elton-update-ready.service
-After=elton-update-ready.service
+#Requires=elton-update-ready.service
+#After=elton-update-ready.service
 
 
 [Service]
