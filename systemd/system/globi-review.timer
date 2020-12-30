@@ -2,7 +2,7 @@
 Description=Periodically Review GloBI Indexed Datasets
 
 [Timer]
-OnCalendar=hourly
+OnCalendar=weekly
 RandomizedDelaySec=1200
 Persistent=true
 
