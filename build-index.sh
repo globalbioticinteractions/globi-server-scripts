@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-set -x
+#set -e
+#set -x
 
 SETTINGS="--settings /etc/globi/.m2/settings.xml"
 
