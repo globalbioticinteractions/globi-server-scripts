@@ -3,6 +3,9 @@
 # Updates all datasets.
 #
 set -x
-DATASETS_ONLINE=$(elton ls --online --no-progress | sort | uniq | grep -v --file $GLOBI_LIB_DIR/dataset-excludes.txt)
 
-echo $DATASETS_ONLINE | xargs -L1 elton update --no-progress
+elton ls --online --no-progress\
+| grep -v --file "$GLOBI_LIB_DIR/dataset-excludes.txt"\
+| sort\
+| uniq\
+| xargs -L1 elton update --no-progress
