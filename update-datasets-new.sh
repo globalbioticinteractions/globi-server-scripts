@@ -14,7 +14,7 @@ if [ $(echo -en ${DATASETS_NEW} | wc -m) -gt 0 ]
 then
   echo "found new datasets"
   echo "updating..."
-  echo -e "${DATASETS_NEW}" | xargs elton update --no-progress
+  echo -e "${DATASETS_NEW}" | xargs -L1 elton update --no-progress
   echo "updating... done."
   
   echo "indexing..."

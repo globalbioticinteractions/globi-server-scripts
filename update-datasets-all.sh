@@ -5,4 +5,4 @@
 set -x
 DATASETS_ONLINE=$(elton ls --online --no-progress | sort | uniq | grep -v --file $GLOBI_LIB_DIR/dataset-excludes.txt)
 
-echo $DATASETS_ONLINE | xargs elton update --no-progress
+echo $DATASETS_ONLINE | xargs -L1 elton update --no-progress
