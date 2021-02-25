@@ -12,6 +12,7 @@
 ^ghc4/data$
 ^globalbioticinteractions/phi-base-data$
 ^HongyuLii/dietdatabase$
+^kinseyfish/dietdatabase$
 ^lamoroso92/pseudonitzchia$
 ^lanescher/dietdatabase$
 ^lirepo/data$
