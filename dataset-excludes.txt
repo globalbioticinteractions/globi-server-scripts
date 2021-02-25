@@ -2,6 +2,10 @@
 ^Bhanditz/pseudonitzchia$
 ^cgmayers/template-dataset$
 ^cooperrlynn/dietdatabase$
+^cmungall/Benesh-et-al-2017$
+^cmungall/dinosaur-biotic-interactions$
+^cmungall/dinosaur-biotic-interactions1$
+^cooperrlynn/dietdatabase$
 ^Dryu0003/dietdatabase$
 ^FloraVincent/template-dataset$
 ^georgeni2442/dietdatabase$
