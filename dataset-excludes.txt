@@ -12,6 +12,7 @@
 ^lanescher/dietdatabase$
 ^lirepo/data$
 ^shulp2211/data$
+^sunjz520/data$
 ^wenqiqin/data$
 ^xiaochunzihao/data$
 ^yangxhcaf/fricke2020$
