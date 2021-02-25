@@ -10,6 +10,9 @@ GLOBI_RAM_DISK=/var/cache/globi/ramdisk
 # used by globi-api
 GLOBI_HOME=/var/cache/globi/api
 
+# contains globi tools and config
+GLOBI_LIB_DIR=/var/lib/globi
+
 # used by elton and globi-build-index
 ELTON_DATASET_DIR=/var/cache/elton/datasets
 

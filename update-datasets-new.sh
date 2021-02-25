@@ -4,8 +4,8 @@
 #
 set -x
 
-DATASETS_ONLINE=$(elton ls --online --no-progress | sort | uniq | grep -v --file dataset-excludes.txt)
-DATASETS_LOCAL=$(elton ls --no-progress | sort | uniq | grep -v --file dataset-excludes.txt)
+DATASETS_ONLINE=$(elton ls --online --no-progress | sort | uniq | grep -v --file $GLOBI_LIB_DIR/dataset-excludes.txt)
+DATASETS_LOCAL=$(elton ls --no-progress | sort | uniq | grep -v --file $GLOBI_LIB_DIR/dataset-excludes.txt)
 
 # note the "!" operator stops the script when no new datasets are found
 DATASETS_NEW=$(diff --changed-group-format='%>' --unchanged-group-format='' <(echo -e "${DATASETS_LOCAL}") <(echo -e "${DATASETS_ONLINE}"))
