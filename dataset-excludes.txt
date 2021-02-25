@@ -5,7 +5,8 @@
 ^Dryu0003/dietdatabase$
 ^FloraVincent/template-dataset$
 ^georgeni2442/dietdatabase$
-^ghc4/data$ 
+^ghc4/data$
+^globalbioticinteractions/phi-base-data$
 ^HongyuLii/dietdatabase$
 ^lamoroso92/pseudonitzchia$
 ^lanescher/dietdatabase$
