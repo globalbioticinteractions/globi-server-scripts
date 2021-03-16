@@ -11,6 +11,7 @@
 ^georgeni2442/dietdatabase$
 ^ghc4/data$
 ^globalbioticinteractions/phi-base-data$
+^globalbioticinteractions/ummzi$
 ^HongyuLii/dietdatabase$
 ^kinseyfish/dietdatabase$
 ^lamoroso92/pseudonitzchia$
