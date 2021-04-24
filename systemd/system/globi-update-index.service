@@ -7,7 +7,7 @@ After=globi-build-index.service
 Type=oneshot
 EnvironmentFile=/etc/globi/globi.conf
 ExecStart=/bin/bash /var/lib/globi/update-index.sh
-ExecStopPost=/bin/bash /var/lib/globi/cleanup.sh
+ExecStart=/bin/bash /var/lib/globi/cleanup.sh
 
 [Install]
 WantedBy= multi-user.target
