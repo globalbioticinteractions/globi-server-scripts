@@ -14,6 +14,7 @@
 ^globalbioticinteractions/ummzi$
 ^HongyuLii/dietdatabase$
 ^kinseyfish/dietdatabase$
+^jerichocook/BIOL395Project$
 ^lamoroso92/pseudonitzchia$
 ^lanescher/dietdatabase$
 ^lirepo/data$
