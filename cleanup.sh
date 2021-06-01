@@ -8,5 +8,12 @@ set -xe
 #aws s3 ls globi/snapshot/org/eol/eol-globi-datasets/1.0-SNAPSHOT/ | sed s+^.*eol-+eol-+g | grep "$DATE_PATTERN" | sed 's+^+s3://globi/snapshot/org/eol/eol-globi-datasets/1.0-SNAPSHOT/+g' > aws-delete-candidates.tsv
 
 # remove index snapshots from minio
-mc ls --config-dir "/etc/globi/.mc" minio/globi/snapshot/org/eol/eol-globi-datasets/1.0-SNAPSHOT/ | grep -o -E "eol-globi-.*[0-9]{8}[.][0-9]{6}-.*$" | sort -r | uniq | tail -n+31 | parallel  mc rm --config-dir "/etc/globi/.mc" minio/globi/snapshot/org/eol/eol-globi-datasets/1.0-SNAPSHOT/{1}
+MINIO_CONFIG="--config-dir /etc/globi/.mc"
+
+mc ${MINIO_CONFIG} ls minio/globi/snapshot/org/eol/eol-globi-datasets/1.0-SNAPSHOT/\
+ | grep -o -E "eol-globi-.*[0-9]{8}[.][0-9]{6}-.*$"\
+ | sort -r\
+ | uniq\
+ | tail -n+31\
+ | parallel mc ${MINIO_CONFIG} rm minio/globi/snapshot/org/eol/eol-globi-datasets/1.0-SNAPSHOT/{1}
 
