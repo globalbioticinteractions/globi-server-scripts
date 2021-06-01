@@ -186,6 +186,24 @@ sudo wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/m
 sudo chmod +x /usr/local/bin/mc
 ```
 
+#### mc - client globi config
+
+to help run cleanup.sh scripts, please create file at /etc/globi/.mc/config.json with 
+```json
+{
+	"version": "9",
+	"hosts": {
+		"minio": {
+			"url": "http://localhost:9000",
+			"accessKey": "[access key]",
+			"secretKey": "[secret key]",
+			"api": "s3v4",
+			"lookup": "auto"
+		}
+	}
+}
+```
+
 ##### add local minio to client
 ```
 mc config host add globi http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_KEY]
