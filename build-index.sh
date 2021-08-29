@@ -3,7 +3,7 @@
 #set -x
 
 # set specific version of GloBI indexer to use
-COMMIT_HASH=40113f32ad77008175475f987f3db0c4da41106e
+COMMIT_HASH=3c8cb8ec8fb5facb15b0f16f30afe524a9047583
 
 SETTINGS="--settings /etc/globi/.m2/settings.xml"
 
