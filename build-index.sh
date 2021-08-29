@@ -2,6 +2,9 @@
 #set -e
 #set -x
 
+# set specific version of GloBI indexer to use
+COMMIT_HASH=40113f32ad77008175475f987f3db0c4da41106e
+
 SETTINGS="--settings /etc/globi/.m2/settings.xml"
 
 function create_tmp_dir {
@@ -35,6 +38,12 @@ function rebuild {
 
   cd $1
   git pull --rebase
+  
+  # checkout specific version if provided
+  if [ -n "$COMMIT_HASH" ]; then
+    git checkout "$COMMIT_HASH"
+  fi
+  
   # tests are executed on travis / dev machines
   mvn clean install -pl eol-globi-neo4j-index -am -DskipTests $SETTINGS
   # remove intermediate build results
