@@ -97,10 +97,10 @@ sudo ln -s /var/lib/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enab
 
 ```
 wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
-echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list
+echo 'deb https://debian.neo4j.com stable 3.4' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 
-sudo apt install neo4j=2.3.12
+sudo apt install neo4j=1:3.4.18
 # https://linoxide.com/linux-how-to/exclude-specific-package-apt-get-upgrade/ 
 # prevent neo4j from being automagically upgraded to latest version
 sudo apt-mark hold neo4j 
@@ -116,21 +116,11 @@ sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some server]:/
 ```
 
 ### create neo4j systemd service
-
-Make sure to stop and disable the default ```/etc/init.d/neo4j-service``` that comes with the debian package - 
-
-```
-sudo service neo4j-service stop
-sudo service neo4j-service disable
-sudo rm /etc/init.d/neo4j-service
-```
-
-Now, install the systemd neo4j service
+Now, enable and stop the systemd neo4j service
 
 ```
-sudo ln -s /var/lib/globi/systemd/system/neo4j.service /lib/systemd/system/neo4j.service
-sudo systemctl daemon-reload
 sudo systemctl enable neo4j.service 
+sudo systemctl stop neo4j.service 
 ```
 
 Now, link the neo4j configuration:
@@ -138,6 +128,13 @@ Now, link the neo4j configuration:
 ```
 sudo mv /etc/neo4j /etc/neo4j.backup
 sudo ln -s /var/lib/globi/neo4j /etc/neo4j
+```
+
+followed by linking the neo4j graph database locations:
+
+```
+sudo mv /var/lib/neo4j/data/databases/graph.db /var/lib/neo4j/data/databases/graph.db.backup
+sudo ln -s /var/cache/neo4j/graph.db /var/lib/neo4j/data/databases/graph.db
 ```
 
 start neo4j
