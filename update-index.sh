@@ -12,7 +12,7 @@ mkdir -p $NEO4J_CACHE_DIR
 chown neo4j:nogroup $NEO4J_CACHE_DIR
 
 # grab data
-GRAPH_DB_VERSION="1.0-SNAPSHOT"
+GRAPH_DB_VERSION="1.1-SNAPSHOT"
 GRAPH_DB_SNAPSHOT="$MAVEN_REPO/org/eol/eol-globi-datasets/${GRAPH_DB_VERSION}/eol-globi-datasets-${GRAPH_DB_VERSION}-neo4j-graph-db.$GRAPH_DB_EXT"
 
 if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_SNAPSHOT >/dev/null ; then
