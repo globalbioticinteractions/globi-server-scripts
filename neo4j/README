@@ -1,0 +1,16 @@
+For some reason, in neo4j v3.4.18, neo4j.conf with:
+
+dbms.read_only = true 
+
+causes neo4j to become unresponsive after reporting "this IndexReader is closed" (see https://github.com/globalbioticinteractions/globalbioticinteractions/issues/701).
+
+This means that, for the time being, configuring neo4j as a read-only graphdb is not feasible.
+
+As a workaround, an additional neo4j service is introduced to run side-by-side. One service is publicly accessible and can be accessed via rglobi package etc. The other is used internally and drives the GloBI API. This way, accidental changes made via the public interface do not propagate to the internal one.
+
+neo4j.conf 
+  ^ public instance
+
+neo4j-internal.conf 
+  ^ internal instance.
+

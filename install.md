@@ -142,6 +142,22 @@ start neo4j
 sudo systemctl start neo4j
 ```
 
+### neo4j internal
+
+To avoid public neo4j instance changes propagating to the neo4j instance that runs the https://{www,api}.globalbioticinteractions.org , a second, internal neo4j instance is created using 
+
+```
+sudo ln -s /var/lib/globi/neo4j-internal /etc/neo4j-internal
+
+sudo ln -s /var/lib/globi/systemd/system/globi-blobstore.service /lib/systemd/system/neo4j-internal.service
+
+sudo systemctl daemon-reload
+sudo systemctl enable neo4j-internal.service
+sudo systemctl start neo4j-internal.service
+```
+
+
+
 
 ## install blob store
 
