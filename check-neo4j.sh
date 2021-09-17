@@ -15,5 +15,5 @@ echo $NEO4J_HAPPY
     echo neo4j is happy: no need to restart
  else
     echo neo4j is not happy: attempt to restart
-    systemctl restart neo4j
+    systemctl restart neo4j-internal
  fi
