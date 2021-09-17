@@ -303,6 +303,15 @@ sudo systemctl daemon-reload
 sudo systemctl enable elton
 ```
 
+```
+sudo ln -s /var/lib/globi/systemd/system/check-neo4j.service /lib/systemd/system/check-neo4j.service
+sudo ln -s /var/lib/globi/systemd/system/check-neo4j.timer /lib/systemd/system/check-neo4j.timer
+sudo systemctl daemon-reload
+sudo systemctl enable check-neo4j.service
+sudo systemctl enable check-neo4j.timer
+```
+
+
 ## install globi build/update index services
 ```
 sudo ln -s /var/lib/globi/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
