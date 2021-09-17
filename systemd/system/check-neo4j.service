@@ -3,7 +3,6 @@ Description=Restart Neo4j If Needed
 
 [Service]
 Type=oneshot
-User=elton
 ExecStart=/bin/bash /var/lib/globi/check-neo4j.sh
 
 [Install]
