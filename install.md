@@ -149,7 +149,12 @@ To avoid public neo4j instance changes propagating to the neo4j instance that ru
 ```
 sudo ln -s /var/lib/globi/neo4j-internal /etc/neo4j-internal
 
-sudo ln -s /var/lib/globi/systemd/system/globi-blobstore.service /lib/systemd/system/neo4j-internal.service
+# create neo4j-internal dirs
+NEO4J_DIRS="/var/log/neo4j-internal /etc/neo4j-internal /var/lib/neo4j-internal/data /var/lib/neo4j-internal/import"
+sudo mkdir -p ${NEO4J_DIRS}
+sudo chown -R neo4j:adm ${NEO4J_DIRS} 
+
+sudo ln -s /var/lib/globi/systemd/system/neo4j-internal.service /lib/systemd/system/neo4j-internal.service
 
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j-internal.service
