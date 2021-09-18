@@ -2,7 +2,7 @@
 JETTY_HOME="$GLOBI_HOME/eol-globi-rest"
 JETTY_DIR="$JETTY_HOME/target"
 
-NEO4J_PORT=7477
+NEO4J_PORT=7478
 
 # set specific version of GloBI indexer to use
 #COMMIT_HASH=3c8cb8ec8fb5facb15b0f16f30afe524a9047583

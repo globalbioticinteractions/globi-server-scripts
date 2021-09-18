@@ -156,6 +156,8 @@ sudo chown -R neo4j:adm ${NEO4J_DIRS}
 
 sudo ln -s /var/lib/globi/systemd/system/neo4j-internal.service /lib/systemd/system/neo4j-internal.service
 
+sudo -u neo4j ln -s /var/cache/neo4j-internal/graph.db /var/lib/neo4j-internal/data/databases/graph.db
+
 sudo systemctl daemon-reload
 sudo systemctl enable neo4j-internal.service
 sudo systemctl start neo4j-internal.service
