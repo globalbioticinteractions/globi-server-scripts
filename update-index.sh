@@ -39,7 +39,7 @@ function update {
   fi
 }
 
-#update neo4j
+update neo4j
 update neo4j-internal
 
 echo $(date) resetting nginx cache...
