@@ -45,7 +45,7 @@ function rebuild {
   fi
   
   # tests are executed on travis / dev machines
-  mvn clean install -pl eol-globi-neo4j-index -am -DskipTests $SETTINGS
+  mvn clean install -pl elton4n -am -DskipTests $SETTINGS
   # remove intermediate build results
   mvn clean -pl eol-globi-neo4j-index -am -DskipTests $SETTINGS
 }
