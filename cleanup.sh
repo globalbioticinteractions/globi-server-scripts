@@ -7,7 +7,7 @@ set -xe
 
 
 
-fuction clean_version { 
+function clean_version { 
   local DATASET_VERSION=${1}
   # create a list of s3 snaphots using some regex
   #DATE_PATTERN='\-20200[12345]'
