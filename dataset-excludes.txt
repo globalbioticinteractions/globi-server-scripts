@@ -11,6 +11,7 @@
 ^FloraVincent/template-dataset$
 ^georgeni2442/dietdatabase$
 ^ghc4/data$
+^globalbioticinteractions/CarniDIET-Database$
 ^globalbioticinteractions/phi-base-data$
 ^globalbioticinteractions/ummzi$
 ^HongyuLii/dietdatabase$
