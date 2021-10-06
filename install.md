@@ -97,10 +97,10 @@ sudo ln -s /var/lib/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enab
 
 ```
 wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
-echo 'deb https://debian.neo4j.com stable 3.4' | sudo tee /etc/apt/sources.list.d/neo4j.list
+echo 'deb https://debian.neo4j.com stable 3.5' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 
-sudo apt install neo4j=1:3.4.18
+sudo apt install neo4j=1:3.5.29
 # https://linoxide.com/linux-how-to/exclude-specific-package-apt-get-upgrade/ 
 # prevent neo4j from being automagically upgraded to latest version
 sudo apt-mark hold neo4j 
