@@ -142,30 +142,6 @@ start neo4j
 sudo systemctl start neo4j
 ```
 
-### neo4j internal
-
-To avoid public neo4j instance changes propagating to the neo4j instance that runs the https://{www,api}.globalbioticinteractions.org , a second, internal neo4j instance is created using 
-
-```
-sudo ln -s /var/lib/globi/neo4j-internal /etc/neo4j-internal
-
-# create neo4j-internal dirs
-NEO4J_DIRS="/var/log/neo4j-internal /etc/neo4j-internal /var/lib/neo4j-internal/data /var/lib/neo4j-internal/import"
-sudo mkdir -p ${NEO4J_DIRS}
-sudo chown -R neo4j:adm ${NEO4J_DIRS} 
-
-sudo ln -s /var/lib/globi/systemd/system/neo4j-internal.service /lib/systemd/system/neo4j-internal.service
-
-sudo -u neo4j ln -s /var/cache/neo4j-internal/graph.db /var/lib/neo4j-internal/data/databases/graph.db
-
-sudo systemctl daemon-reload
-sudo systemctl enable neo4j-internal.service
-sudo systemctl start neo4j-internal.service
-```
-
-
-
-
 ## install blob store
 
 GloBI uses https://min.io as a blobstore and front for s3 backend. 
