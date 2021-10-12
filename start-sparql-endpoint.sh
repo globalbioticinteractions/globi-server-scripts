@@ -5,7 +5,7 @@ if [ -z "$GLOBI_HOME" ]; then
 fi
 
 FUSEKI_HOME="$GLOBI_HOME/eol-globi-rdf"
-FUSEKI_DIR="$FUSEKI_HOME/target/apache-jena-fuseki-2.4.0"
+FUSEKI_DIR="$FUSEKI_HOME/target/apache-jena-fuseki-4.2.0"
 
 cd "$GLOBI_HOME"
 echo fuseki rebuilding...
