@@ -13,8 +13,8 @@ cd "$GLOBI_HOME"
 echo fuseki rebuilding...
 mvn clean install -pl eol-globi-rdf -am -Prdf --settings /etc/globi/.m2/settings.xml
 
-# truncate interactions.nq.gz to 1M lines for now.
-cat ${FUSEKI_DATA} | gunzip | head -n1000000 | gzip > ${FUSEKI_DATA}.new
+# truncate interactions.nq.gz to 10M nquads for now.
+cat ${FUSEKI_DATA} | gunzip | head -n10000000 | gzip > ${FUSEKI_DATA}.new
 mv ${FUSEKI_DATA}.new ${FUSEKI_DATA}
 
 echo fuseki starting...
