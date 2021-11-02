@@ -21,6 +21,7 @@
 ^lamoroso92/pseudonitzchia$
 ^lanescher/dietdatabase$
 ^lirepo/data$
+^marvelje/dietdatabase$
 ^shulp2211/data$
 ^sunjz520/data$
 ^wenqiqin/data$
