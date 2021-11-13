@@ -1,4 +1,5 @@
 #!/bin/bash
+set -xe
 CACHE_DIR=/var/cache
 
 function update {
