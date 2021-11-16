@@ -26,4 +26,5 @@
 ^sunjz520/data$
 ^wenqiqin/data$
 ^xiaochunzihao/data$
+^xrisfg/inaturalist$
 ^yangxhcaf/fricke2020$
