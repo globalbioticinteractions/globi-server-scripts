@@ -16,6 +16,8 @@
 ^globalbioticinteractions/CarniDIET-Database$
 ^globalbioticinteractions/phi-base-data$
 ^globalbioticinteractions/ummzi$
+^qgroom/yale-peabody$
+^qgroom/iguana$
 ^HongyuLii/dietdatabase$
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
