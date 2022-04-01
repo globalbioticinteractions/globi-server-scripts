@@ -6,6 +6,7 @@ After=globi-build-index.service
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/globi/globi.conf
+ExecStart=/bin/bash /var/lib/globi/cleanup.sh
 ExecStart=/bin/bash /var/lib/globi/update-index.sh
 ExecStart=/bin/bash /var/lib/globi/cleanup.sh
 
