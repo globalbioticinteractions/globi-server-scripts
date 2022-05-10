@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/globi/globi.conf
-ExecStart=mkdir -p ${STORAGE_MOUNT_PATH} && /usr/bin/sshfs -o allow_other,IdentityFile=${STORAGE_SSH_KEY} ${STORAGE_USER}@${STORAGE_HOST}:/${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
+ExecStart=/bin/mkdir -p ${STORAGE_MOUNT_PATH} && /usr/bin/sshfs -o allow_other,IdentityFile=${STORAGE_SSH_KEY} ${STORAGE_USER}@${STORAGE_HOST}:/${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
 RemainAfterExit=true
 ExecStop=/bin/umount ${STORAGE_MOUNT_PATH}
 
