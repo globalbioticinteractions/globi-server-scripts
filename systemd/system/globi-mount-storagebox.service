@@ -1,0 +1,14 @@
+[Unit]
+Description=GloBI StorageBox Mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/globi/globi.conf
+ExecStart=/bin/bash sshfs -o allow_other,IdentityFile=/etc/globi/.ssh/id_rsa ${STORAGE_USER}@${STORAGE_HOST}:/${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
+RemainAfterExit=true
+ExecStop=/bin/umount ${STORAGE_MOUNT_PATH}
+
+[Install]
+WantedBy= multi-user.target

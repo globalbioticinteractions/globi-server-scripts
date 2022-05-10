@@ -392,3 +392,36 @@ Even though GloBI is in the process of deprecating use of S3 for ethical and eco
     ]
 }
 ```
+
+### sshfs
+
+SSHFS is used by GloBI to mount network attached storage onto the GloBI server
+
+ssh keys are used to access the system:
+
+see https://docs.hetzner.com/robot/storage-box/backup-space-ssh-keys . 
+
+```
+$ sudo mkdir -p  /etc/globi/.ssh/
+$ sudo ssh-keygen -e -f /etc/globi/.ssh/id_rsa.pub | grep -v "Comment:" > /etc/globi/.ssh/id_rsa_rfc.pub
+$ cat /etc/globi/.ssh/id_rsa.pub > /tmp/storagebox_authorized_keys
+$ cat /etc/globi/.ssh/id_rsa_rfc.pub >> /tmp/storagebox_authorized_keys
+...
+echo -e "mkdir .ssh \n chmod 700 .ssh \n put /tmp/storagebox_authorized_keys .ssh/authorized_keys \n chmod 600 .ssh/authorized_keys" | sftp <username>@<username>.example.org
+<username>@<username>.example.org's password:
+```
+
+Test connection using:
+sudo sftp -i /etc/globi/.ssh/id_rsa <username>@<username>.example.org
+
+#### enable mounting via sshfs
+
+```
+$ sudo install sshfs 
+...
+$ sudo ln -s /var/lib/globi/systemd/system/globi-mount-storagebox.service /lib/systemd/system/globi-mount-storagebox.service
+$ sudo systemctl enable globi-mount-storagebox.service
+$ sudo systemctl start globi-mount-storage.service
+
+
+
