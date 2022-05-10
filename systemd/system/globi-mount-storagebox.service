@@ -6,8 +6,9 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 EnvironmentFile=/etc/globi/globi.conf
+User=elton
 ExecStart=/bin/mkdir -p ${STORAGE_MOUNT_PATH}
-ExecStart=/usr/bin/sshfs -o allow_other,IdentityFile=${STORAGE_SSH_KEY} ${STORAGE_USER}@${STORAGE_HOST}:${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
+ExecStart=/usr/bin/sshfs -o IdentityFile=${STORAGE_SSH_KEY},reconnect ${STORAGE_USER}@${STORAGE_HOST}:${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
 RemainAfterExit=true
 ExecStop=/bin/umount ${STORAGE_MOUNT_PATH}
 
