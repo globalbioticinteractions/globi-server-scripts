@@ -31,7 +31,7 @@ ARTIFACTS_BUCKET=globi
 # storage box config
 STORAGE_USER=REPLACE_ME
 STORAGE_HOST=some.example.org
-STORAGE_PATH=some/path
+STORAGE_HOST_PATH=some/path
 STORAGE_MOUNT_PATH=/var/cache/globi2
 STORAGE_SSH_KEY=/etc/globi/.ssh/id_rsa
 
