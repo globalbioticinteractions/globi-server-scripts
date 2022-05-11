@@ -402,6 +402,8 @@ ssh keys are used to access the system:
 see https://docs.hetzner.com/robot/storage-box/backup-space-ssh-keys . 
 
 ```
+$ sudo mkdir -p /etc/elton
+$ sudo chown elton:elton /etc/elton
 $ sudo -u elton mkdir -p  /etc/elton/.ssh/
 $ sudo -u elton ssh-keygen -e -f /etc/elton/.ssh/id_rsa.pub | grep -v "Comment:" > /etc/elton/.ssh/id_rsa_rfc.pub
 $ cat /etc/elton/.ssh/id_rsa.pub > /tmp/storagebox_authorized_keys
