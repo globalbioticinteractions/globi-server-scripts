@@ -8,7 +8,7 @@ Type=oneshot
 EnvironmentFile=/etc/elton/elton.conf
 User=elton
 ExecStart=/bin/mkdir -p ${STORAGE_MOUNT_PATH}
-ExecStart=/usr/bin/sshfs -o reconnect,IdentityFile=${STORAGE_SSH_KEY} ${STORAGE_USER}@${STORAGE_HOST}:${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
+ExecStart=/usr/bin/sshfs -o reconnect,IdentityFile=${STORAGE_SSH_KEY},UserKnownHostsFile=/etc/elton/.ssh/known_hosts ${STORAGE_USER}@${STORAGE_HOST}:${STORAGE_HOST_PATH} ${STORAGE_MOUNT_PATH}
 RemainAfterExit=true
 ExecStop=/bin/umount ${STORAGE_MOUNT_PATH}
 

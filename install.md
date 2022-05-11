@@ -421,7 +421,7 @@ echo -e "mkdir .ssh \n chmod 700 .ssh \n put /tmp/storagebox_authorized_keys .ss
 ```
 
 Test connection using:
-sudo sftp -i /etc/elton/.ssh/id_rsa <username>@<username>.example.org
+sudo sftp -oUserKnownHostsFile=/etc/elton/.ssh/known_hosts -i /etc/elton/.ssh/id_rsa <username>@<username>.example.org
 
 #### enable mounting via sshfs
 
