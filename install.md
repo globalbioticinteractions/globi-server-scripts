@@ -51,6 +51,13 @@ sudo -u globi git clone https://github.com/globalbioticinteractions/globalbiotic
 sudo cp /var/lib/globi/globi.conf.template /etc/globi/globi.conf
 sudo chown root:root /etc/globi/globi.conf
 sudo chmod 600 /etc/globi/globi.conf
+
+sudo mkdir -p /etc/elton
+sudo chown elton:elton /etc/elton
+sudo cp /var/lib/globi/elton.conf.template /etc/elton/elton.conf
+sudo chown elton:elton /etc/elton/elton.conf
+sudo chmod 600 /etc/elton/elton.conf
+
 ```
 
 
