@@ -402,17 +402,17 @@ ssh keys are used to access the system:
 see https://docs.hetzner.com/robot/storage-box/backup-space-ssh-keys . 
 
 ```
-$ sudo mkdir -p  /etc/globi/.ssh/
-$ sudo ssh-keygen -e -f /etc/globi/.ssh/id_rsa.pub | grep -v "Comment:" > /etc/globi/.ssh/id_rsa_rfc.pub
-$ cat /etc/globi/.ssh/id_rsa.pub > /tmp/storagebox_authorized_keys
-$ cat /etc/globi/.ssh/id_rsa_rfc.pub >> /tmp/storagebox_authorized_keys
+$ sudo -u elton mkdir -p  /etc/elton/.ssh/
+$ sudo -u elton ssh-keygen -e -f /etc/elton/.ssh/id_rsa.pub | grep -v "Comment:" > /etc/elton/.ssh/id_rsa_rfc.pub
+$ cat /etc/elton/.ssh/id_rsa.pub > /tmp/storagebox_authorized_keys
+$ cat /etc/elton/.ssh/id_rsa_rfc.pub >> /tmp/storagebox_authorized_keys
 ...
 echo -e "mkdir .ssh \n chmod 700 .ssh \n put /tmp/storagebox_authorized_keys .ssh/authorized_keys \n chmod 600 .ssh/authorized_keys" | sftp <username>@<username>.example.org
 <username>@<username>.example.org's password:
 ```
 
 Test connection using:
-sudo sftp -i /etc/globi/.ssh/id_rsa <username>@<username>.example.org
+sudo sftp -i /etc/elton/.ssh/id_rsa <username>@<username>.example.org
 
 #### enable mounting via sshfs
 
