@@ -420,3 +420,30 @@ The file /etc/backup-credentials.txt (mode 0600) should contain two lines as fol
 username=<username>
 password=<password>
 ```
+
+so add following to ```/etc/fstab```
+
+```
+//u302912-sub1.your-storagebox.de/u302912-sub1 /mnt/storagebox-u302912-sub1 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub1-credentials.txt,uid=elton,gid=elton,file_mode=0660,dir_mode=0770 0 0
+```
+
+
+now, create elton cache dir (owned by ```elton``` user) using:
+
+```
+sudo mkdir -p /mnt/storagebox-u302912-sub1/
+sudo ln -s /mnt/storagebox-u302912-sub1/ /var/cache/elton
+sudo chown -h elton:elton elton
+```
+
+for similarly, for minio managed data, add to ```/etc/fstab```
+
+```
+//u302912-sub2.your-storagebox.de/u302912-sub2 /mnt/storagebox-u302912-sub2 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub2-credentials.txt,uid=minio,gid=minio,file_mode=0660,dir_mode=0770 0 0
+```
+
+```
+sudo mkdir -p /mnt/storagebox-u302912-sub2/
+sudo ln -s /mnt/storagebox-u302912-sub2/ /var/cache/minio
+sudo chown -h minio:minio minio
+```
