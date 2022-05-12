@@ -447,3 +447,5 @@ sudo mkdir -p /mnt/storagebox-u302912-sub2/
 sudo ln -s /mnt/storagebox-u302912-sub2/ /var/cache/minio
 sudo chown -h minio:minio minio
 ```
+
+make sure to set the MINIO_DIR in /etc/globi/globi.conf to the absolute mount mount. It appears that minio doesn't like symlinks. Possibly related to https://github.com/minio/minio/issues/4588 .  
