@@ -424,7 +424,7 @@ password=<password>
 so add following to ```/etc/fstab```
 
 ```
-//u302912-sub1.your-storagebox.de/u302912-sub1 /mnt/storagebox-u302912-sub1 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub1-credentials.txt,uid=elton,gid=elton,file_mode=0660,dir_mode=0770 0 0
+//u302912-sub1.your-storagebox.de/u302912-sub1 /mnt/storagebox-u302912-sub1 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub1-credentials.txt,uid=elton,gid=elton,file_mode=0755,dir_mode=0755 0 0
 ```
 
 
