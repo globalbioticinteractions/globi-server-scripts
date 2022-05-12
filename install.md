@@ -439,7 +439,7 @@ sudo chown -h elton:elton elton
 for similarly, for minio managed data, add to ```/etc/fstab```
 
 ```
-//u302912-sub2.your-storagebox.de/u302912-sub2 /mnt/storagebox-u302912-sub2 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub2-credentials.txt,uid=minio,gid=minio,file_mode=0660,dir_mode=0770 0 0
+//u302912-sub2.your-storagebox.de/u302912-sub2 /mnt/storagebox-u302912-sub2 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub2-credentials.txt,uid=minio,gid=minio,file_mode=0755,dir_mode=0755 0 0
 ```
 
 ```
