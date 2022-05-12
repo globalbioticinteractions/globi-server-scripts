@@ -400,37 +400,23 @@ Even though GloBI is in the process of deprecating use of S3 for ethical and eco
 }
 ```
 
-### sshfs
+### CIFS
 
-SSHFS is used by GloBI to mount network attached storage onto the GloBI server
+CIFS/Samba is used by GloBI to mount network attached storage onto the GloBI server
 
-ssh keys are used to access the system:
+from: 
+https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/
 
-see https://docs.hetzner.com/robot/storage-box/backup-space-ssh-keys . 
 
-```
-$ sudo mkdir -p /etc/elton
-$ sudo chown elton:elton /etc/elton
-$ sudo -u elton mkdir -p  /etc/elton/.ssh/
-$ sudo -u elton ssh-keygen -e -f /etc/elton/.ssh/id_rsa.pub | grep -v "Comment:" > /etc/elton/.ssh/id_rsa_rfc.pub
-$ cat /etc/elton/.ssh/id_rsa.pub > /tmp/storagebox_authorized_keys
-$ cat /etc/elton/.ssh/id_rsa_rfc.pub >> /tmp/storagebox_authorized_keys
-...
-echo -e "mkdir .ssh \n chmod 700 .ssh \n put /tmp/storagebox_authorized_keys .ssh/authorized_keys \n chmod 600 .ssh/authorized_keys" | sftp <username>@<username>.example.org
-<username>@<username>.example.org's password:
-```
-
-Test connection using:
-sudo sftp -oUserKnownHostsFile=/etc/elton/.ssh/known_hosts -i /etc/elton/.ssh/id_rsa <username>@<username>.example.org
-
-#### enable mounting via sshfs
+By adding the following line to ```/etc/fstab```, your system will automatically mount the file system at boot. (It is a single line!):
 
 ```
-$ sudo install sshfs 
-...
-$ sudo ln -s /var/lib/globi/systemd/system/globi-mount-storagebox.service /lib/systemd/system/globi-mount-storagebox.service
-$ sudo systemctl enable globi-mount-storagebox.service
-$ sudo systemctl start globi-mount-storage.service
+//<username>.your-storagebox.de/backup /mnt/backup-server cifs iocharset=utf8,rw,credentials=/etc/backup-credentials.txt,uid=<system account>,gid=<system group>,file_mode=0660,dir_mode=0770 0 0
+```
 
+The file /etc/backup-credentials.txt (mode 0600) should contain two lines as follows:
 
-
+```
+username=<username>
+password=<password>
+```
