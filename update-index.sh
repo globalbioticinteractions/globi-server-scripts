@@ -40,9 +40,13 @@ function update {
   fi
 }
 
-update neo4j
+function update_and_reset {
+  update neo4j
 
-echo $(date) resetting nginx cache...
-sudo rm -rf /var/cache/nginx
-sudo /usr/sbin/service nginx restart	
-echo $(date) resetting nginx cache done.
+  echo $(date) resetting nginx cache...
+  sudo rm -rf /var/cache/nginx
+  sudo /usr/sbin/service nginx restart
+  echo $(date) resetting nginx cache done.
+}
+
+update_and_reset
