@@ -407,11 +407,13 @@ CIFS/Samba is used by GloBI to mount network attached storage onto the GloBI ser
 from: 
 https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/
 
+also see:
+https://askubuntu.com/questions/1210867/remount-cifs-on-network-reconnect
 
 By adding the following line to ```/etc/fstab```, your system will automatically mount the file system at boot. (It is a single line!):
 
 ```
-//<username>.your-storagebox.de/backup /mnt/backup-server cifs iocharset=utf8,rw,credentials=/etc/backup-credentials.txt,uid=<system account>,gid=<system group>,file_mode=0660,dir_mode=0770 0 0
+//<username>.your-storagebox.de/backup /mnt/backup-server cifs iocharset=utf8,rw,credentials=/etc/backup-credentials.txt,uid=<system account>,gid=<system group>,file_mode=0660,dir_mode=0770,noauto,x-systemd.automount,x-systemd.idle-timeout=30 0 0
 ```
 
 The file /etc/backup-credentials.txt (mode 0600) should contain two lines as follows:
@@ -424,7 +426,7 @@ password=<password>
 so add following to ```/etc/fstab```
 
 ```
-//u302912-sub1.your-storagebox.de/u302912-sub1 /mnt/storagebox-u302912-sub1 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub1-credentials.txt,uid=elton,gid=elton,file_mode=0755,dir_mode=0755 0 0
+//u302912-sub1.your-storagebox.de/u302912-sub1 /mnt/storagebox-u302912-sub1 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub1-credentials.txt,uid=elton,gid=elton,file_mode=0755,dir_mode=0755,noauto,x-systemd.automount,x-systemd.idle-timeout=30 0 0
 ```
 
 
@@ -439,7 +441,7 @@ sudo chown -h elton:elton elton
 for similarly, for minio managed data, add to ```/etc/fstab```
 
 ```
-//u302912-sub2.your-storagebox.de/u302912-sub2 /mnt/storagebox-u302912-sub2 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub2-credentials.txt,uid=minio,gid=minio,file_mode=0755,dir_mode=0755 0 0
+//u302912-sub2.your-storagebox.de/u302912-sub2 /mnt/storagebox-u302912-sub2 cifs iocharset=utf8,rw,credentials=/etc/globi/storagebox-u302912-sub2-credentials.txt,uid=minio,gid=minio,file_mode=0755,dir_mode=0755,noauto,x-systemd.automount,x-systemd.idle-timeout=30 0 0
 ```
 
 ```
