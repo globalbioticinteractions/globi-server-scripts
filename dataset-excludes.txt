@@ -28,6 +28,11 @@
 ^marvelje/dietdatabase$
 ^shulp2211/data$
 ^sunjz520/data$
+^ThaoLe20/Testing$
+^ThaoLe20/template-dataset$
+^ThaoLe20/Fish-diets$
+^ThaoLe20/Diets-of-bottlenose-dolphins$
+^ThaoLe20/Bottlenose-Dolphin-Diet$
 ^wenqiqin/data$
 ^xiaochunzihao/data$
 ^xrisfg/inaturalist$
