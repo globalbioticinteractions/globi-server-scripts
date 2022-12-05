@@ -16,6 +16,8 @@ GLOBI_LIB_DIR=/var/lib/globi
 # used by elton and globi-build-index
 ELTON_DATASET_DIR=/var/cache/elton/datasets
 
+NOMER_CACHE_DIR=/var/cache/nomer
+
 # used by index building to publish intermediate snapshot results
 GLOBI_SNAPSHOT_REPOSITORY_URL=file:///var/cache/minio/snapshot
 
