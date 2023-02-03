@@ -451,3 +451,22 @@ sudo chown -h minio:minio minio
 ```
 
 make sure to set the MINIO_DIR in /etc/globi/globi.conf to the absolute mount mount. It appears that minio doesn't like symlinks. Possibly related to https://github.com/minio/minio/issues/4588 .  
+
+
+# install uncomplicated firewall (ufw)
+
+sudo apt install ufw
+
+## configure certbot to allow http for auto-renew
+
+sudo mkdir -p /etc/letsencrypt
+sudo cp etc/letsencrypt/cli.ini /etc/letsencrypt/cli.ini
+
+where cli.ini contains something like:
+
+```
+# Manage Firewall
+pre-hook = ufw allow http
+post-hook = ufw deny http
+```
+
