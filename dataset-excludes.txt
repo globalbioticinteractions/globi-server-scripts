@@ -1,4 +1,5 @@
 ^local$
+^arw36/template-dataset$
 ^Astudentx/data$
 ^Bhanditz/pseudonitzchia$
 ^cgmayers/template-dataset$
