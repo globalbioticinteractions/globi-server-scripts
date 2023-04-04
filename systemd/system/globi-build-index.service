@@ -1,7 +1,5 @@
 [Unit]
 Description=Rebuild GloBI Indexes
-Requires=elton-update-ready.service
-After=elton-update-ready.service
 
 
 [Service]
