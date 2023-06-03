@@ -42,8 +42,8 @@ sudo useradd -r -s /bin/false globi
 
 ## globi server scripts and config
 ```
-sudo mkdir -p /var/lib/globi /var/cache/globi
-sudo chown globi:globi /var/lib/globi /var/cache/globi
+sudo mkdir -p /var/lib/globi /var/cache/globi /var/lib/globinizer /etc/globi
+sudo chown globi:globi /var/lib/globi /var/cache/globi /var/lib/globinizer
 sudo -u globi git clone https://github.com/jhpoelen/globi-server-scripts /var/lib/globi
 sudo -u globi git clone https://github.com/globalbioticinteractions/globinizer /var/lib/globinizer
 sudo -u globi git clone https://github.com/globalbioticinteractions/globalbioticinteractions /var/cache/globi/api
