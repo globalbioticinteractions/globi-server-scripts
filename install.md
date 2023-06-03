@@ -65,7 +65,7 @@ sudo chmod 600 /etc/elton/elton.conf
 
 create cloudflare.ini:
 ```
-sudo cp /etc/globi/cloudflare.ini.template /etc/globi/cloudflare.ini
+sudo cp /var/lib/globi/cloudflare.ini.template /etc/globi/cloudflare.ini
 sudo chown root:root /etc/globi/cloudflare.ini
 sudo chmod 600 /etc/globi/cloudflare.ini
 ```
@@ -107,7 +107,7 @@ wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.com stable 3.5' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 
-sudo apt install neo4j=1:3.5.29
+sudo apt install neo4j=1:3.5.35
 # https://linoxide.com/linux-how-to/exclude-specific-package-apt-get-upgrade/ 
 # prevent neo4j from being automagically upgraded to latest version
 sudo apt-mark hold neo4j 
@@ -165,8 +165,16 @@ sudo chown minio:minio /var/cache/minio
 ### install
 minio (server) and mc (client)
 
+
+from https://min.io/docs/minio/linux/operations/install-deploy-manage/migrate-fs-gateway.html 2023-06-03
+Important
+
+Standalone/file system mode continues to work on any release up to and including MinIO Server RELEASE.2022-10-24T18-35-07Z. To continue using a standalone deployment, install that MinIO Server release with MinIO Client RELEASE.2022-10-29T10-09-23Z or any earlier release with its corresponding MinIO Client. Note that the version of the MinIO Client should be newer and as close as possible to the version of the MinIO server.
+
+
 ```
-sudo wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
+#sudo wget https://dl.min.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio 
+sudo wget https://dl.min.io/server/minio/release/linux-amd64/archive/minio.RELEASE.2022-10-24T18-35-07Z -O /usr/local/bin/minio	
 sudo chmod +x /usr/local/bin/minio
 ```
 
@@ -185,7 +193,8 @@ sudo systemctl start globi-blobstore.service
 #### mc - client
 
 ```
-sudo wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+#sudo wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+sudo wget https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2022-10-29T10-09-23Z -O /usr/local/bin/mc
 sudo chmod +x /usr/local/bin/mc
 ```
 
@@ -214,13 +223,13 @@ mc config host add globi http://localhost:9000 [MINIO_ACCESS_KEY] [MINIO_SECRET_
 mc admin user add globi [REVIEW_USER_ACCESS_KEY] [REVIEW_USER_SECRET_KEY]
 
 mc admin group add globi review-users [REVIEW_USER_ACCESS_KEY]
-mc admin policy add globi write-reviews-only policy/write-reviews-only.json
+mc admin policy add globi write-reviews-only /var/lib/globi/policy/write-reviews-only.json
 mc admin policy set globi write-reviews-only group=review-users
 mc config host add globi-reviews http://localhost:9000 [REVIEW_USER_ACCESS_KEY] [REVIEW_USER_SECRET_KEY] --api s3v4
 
 mc admin user add globi [RELEASE_USER_ACCESS_KEY] [RELEASE_USER_SECRET_KEY]
 mc admin group add globi release-users [RELEASE_USER_ACCESS_KEY]
-mc admin policy add globi readwrite-release policy/readwrite-releases.json
+mc admin policy add globi readwrite-release /var/lib/globi/policy/readwrite-releases.json
 mc admin policy set globi readwrite-release group=release-users
 
 ```
@@ -435,7 +444,7 @@ now, create elton cache dir (owned by ```elton``` user) using:
 ```
 sudo mkdir -p /mnt/storagebox-u302912-sub1/
 sudo ln -s /mnt/storagebox-u302912-sub1/data/elton /var/cache/elton
-sudo chown -h elton:elton elton
+sudo chown -h elton:elton /var/cache/elton
 ```
 
 for similarly, for minio managed data, add to ```/etc/fstab```
@@ -447,7 +456,7 @@ for similarly, for minio managed data, add to ```/etc/fstab```
 ```
 sudo mkdir -p /mnt/storagebox-u302912-sub2/
 sudo ln -s /mnt/storagebox-u302912-sub2/ /var/cache/minio
-sudo chown -h minio:minio minio
+sudo chown -h minio:minio /var/cache/minio
 ```
 
 make sure to set the MINIO_DIR in /etc/globi/globi.conf to the absolute mount mount. It appears that minio doesn't like symlinks. Possibly related to https://github.com/minio/minio/issues/4588 .  
