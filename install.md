@@ -122,6 +122,14 @@ Neo4j server runs with a readonly copy of a pre-generated neo4j db. If you have 
 sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some server]:/var/cache/neo4j/ /var/cache/
 ```
 
+
+### create neo4j cache directories
+
+sudo mkdir -p /var/cache/neo4j/data/databases
+sudo chown -R neo4j:neo4j /var/cache/neo4j
+
+
+
 ### create neo4j systemd service
 Now, enable and stop the systemd neo4j service
 

@@ -1,2 +1,1 @@
-dns_cloudflare_email=REPLACE_ME
-dns_cloudflare_api_key=REPLACE_ME
+dns_cloudflare_api_token=REPLACE_ME
