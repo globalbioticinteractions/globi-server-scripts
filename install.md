@@ -83,7 +83,9 @@ sudo certbot -a dns-cloudflare -i nginx --server https://acme-v02.api.letsencryp
 
 # staging certbot (not production)
 
+```
 sudo certbot -a dns-cloudflare -i nginx --server https://acme-staging-v02.api.letsencrypt.org/directory -d depot.globalbioticinteractions.org -d api.globalbioticinteractions.org -d neo4j.globalbioticinteractions.org -d lod.globalbioticinteractions.org -d blog.globalbioticinteractions.org
+```
 
 ## install nginx
 
@@ -125,9 +127,10 @@ sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some server]:/
 
 ### create neo4j cache directories
 
+```
 sudo mkdir -p /var/cache/neo4j/data/databases
 sudo chown -R neo4j:neo4j /var/cache/neo4j
-
+```
 
 
 ### create neo4j systemd service
