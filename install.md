@@ -321,9 +321,22 @@ sudo rsync -Pavz -e "ssh -i [some path]/.ssh/id_rsa" [some user]@[some server]:/
 // install elton commandline using https://github.com/globalbioticinteractions/elton
 
 ```
+
 sudo ln -s /var/lib/globi/systemd/system/elton.service /lib/systemd/system/elton.service
+sudo ln -s /var/lib/globi/systemd/system/elton.timer /lib/systemd/system/elton.timer
+sudo ln -s /var/lib/globi/systemd/system/elton-full.service /lib/systemd/system/elton-full.service
+sudo ln -s /var/lib/globi/systemd/system/elton-full.timer /lib/systemd/system/elton-full.timer
+sudo ln -s /var/lib/globi/systemd/system/elton-update-ready.service /lib/systemd/system/elton-update-ready.service
+
 sudo systemctl daemon-reload
+
 sudo systemctl enable elton
+sudo systemctl enable elton.timer
+sudo systemctl start elton.timer
+
+sudo systemctl enable elton-full
+sudo systemctl enable elton-full.timer
+sudo systemctl start elton-full.timer
 ```
 
 ```
