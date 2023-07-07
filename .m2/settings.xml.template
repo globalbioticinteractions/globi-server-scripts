@@ -10,28 +10,31 @@
             <id>globi-release</id>
             <username>CHANGE_ME</username>
             <password>CHANGE_ME</password>
-            <!--configuration-->
+            <configuration>
               <!-- enable when non-aws s3 endpoint is used in combination with https://github.com/globalbioticinteractions/maven-s3-wagon --> 
-              <!--endpoint>https://s3.example.org</endpoint-->
-            <!--/configuration-->
+              <!-- default minio server config -->
+              <endpoint>http://localhost:9000</endpoint>
+            </configuration>
         </server>
         <server>
             <id>globi-snapshot</id>
             <username>CHANGE_ME</username>
             <password>CHANGE_ME</password>
-            <!--configuration-->
+            <configuration>
               <!-- enable when non-aws s3 endpoint is used in combination with https://github.com/globalbioticinteractions/maven-s3-wagon --> 
-              <!--endpoint>https://s3.example.org</endpoint-->
-            <!--/configuration-->
+              <!-- default minio server config -->
+              <endpoint>http://localhost:9000</endpoint>
+            </configuration>
         </server>
 	<server>
             <id>globi-datasets</id>
             <username>CHANGE_ME</username>
             <password>CHANGE_ME</password>
-            <!--configuration-->
+            <configuration>
               <!-- enable when non-aws s3 endpoint is used in combination with https://github.com/globalbioticinteractions/maven-s3-wagon --> 
-              <!--endpoint>https://s3.example.org</endpoint-->
-            <!--/configuration-->
+              <!-- default minio server config -->
+              <endpoint>http://localhost:9000</endpoint>
+            </configuration>
         </server>
 	<server>
 	    <id>ncbi-link-out</id>
