@@ -1,0 +1,5 @@
+[default]
+access_key = REPLACE_ME
+host_base = blob.globalbioticinteractions.org
+host_bucket = blob.globalbioticinteractions.org
+secret_key = REPLACE_ME

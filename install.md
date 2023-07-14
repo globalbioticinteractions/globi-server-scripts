@@ -387,12 +387,26 @@ sudo systemctl enable globi-api.service
 
 ## install globi dataset review services
 
+### review dependencies
+```
+sudo apt-get install s3cmd mlr jq
+```
+
+### review configuration
+```
+sudo cp /var/lib/globi/.s3cfg.template /etc/globi/.s3cfg
+sudo chown root:root /etc/globi/.s3cfg
+sudo chmod 600 /etc/globi/.s3cfg
+```
+after that, replace `REPLACE_ME` values with appropriate entries.
+
+```
 sudo ln -s /var/lib/globi/systemd/system/globi-review.service /lib/systemd/system/globi-review.service
 sudo systemctl enable globi-review.service
 
 sudo ln -s /var/lib/globi/systemd/system/globi-review.timer /lib/systemd/system/globi-review.timer
 sudo systemctl enable globi-review.timer
-
+```
 
 ## install globi sparql endpoint
 ```
