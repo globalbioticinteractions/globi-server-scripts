@@ -20,7 +20,9 @@
 ^globalbioticinteractions/ummzi$
 ^qgroom/yale-peabody$
 ^qgroom/iguana$
+^qgroom/template-dataset$
 ^HongyuLii/dietdatabase$
+^karelTole/template-dataset$
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
 ^jhpoelen/dietdatabase$
@@ -35,6 +37,9 @@
 ^ThaoLe20/Fish-diets$
 ^ThaoLe20/Diets-of-bottlenose-dolphins$
 ^ThaoLe20/Bottlenose-Dolphin-Diet$
+^tkuhn/template-dataset$
+^trsraman/template-dataset$
+^UCcongenomics/template-dataset$
 ^wenqiqin/data$
 ^xiaochunzihao/data$
 ^xrisfg/inaturalist$
