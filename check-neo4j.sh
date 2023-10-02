@@ -15,5 +15,6 @@ echo $NEO4J_HAPPY
     echo neo4j is happy: no need to restart
  else
     echo neo4j is not happy: attempt to restart
-    systemctl restart neo4j-internal
+    echo forcing neo4j index reset
+    sudo /var/lib/globi/update-index -f
  fi
