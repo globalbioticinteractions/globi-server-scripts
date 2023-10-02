@@ -25,10 +25,10 @@ function update {
 
   if [ "${FORCE_RESET}" = "-f" ]
   then
-    sudo rm $GRAPH_DB_ARCHIVE
+    echo sudo rm $GRAPH_DB_ARCHIVE
   fi
 
-  if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_SNAPSHOT >/dev/null; then
+  if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_SNAPSHOT >/dev/null ; then
     echo File same, no update needed
   else
     echo File different updating
