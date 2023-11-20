@@ -1,6 +1,6 @@
 #!/bin/bash
-#set -e
-#set -x
+set -e
+set -x
 
 # set specific version of GloBI indexer to use
 #COMMIT_HASH=3c8cb8ec8fb5facb15b0f16f30afe524a9047583
