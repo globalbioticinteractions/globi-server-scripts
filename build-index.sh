@@ -64,6 +64,12 @@ function link_data {
   process_dataset eol-globi-datasets $1 "generate-datasets,link" deploy
 }
 
+function summarize_data {
+  rebuild $1
+  # deploy linked data to keep a trace of snapshot versions
+  process_dataset eol-globi-datasets $1 "generate-datasets,summarize" deploy
+}
+
 function export_data {
  # then export it, deploy artifacts to remote maven repository
  rebuild $1
@@ -81,5 +87,6 @@ function deploy_data {
 
 import_data $GLOBI_CACHE
 link_data $GLOBI_CACHE
+summarize_data $GLOBI_CACHE
 export_data $GLOBI_CACHE
 #deploy_data $GLOBI_CACHE
