@@ -9,6 +9,7 @@
 ^cmungall/dinosaur-biotic-interactions$
 ^cmungall/dinosaur-biotic-interactions1$
 ^cooperrlynn/dietdatabase$
+^debpaul/DIDB$
 ^Dryu0003/dietdatabase$
 ^ecohealthalliance/bat-co-roosting-database$
 ^Faizaufa/redhead2018$
