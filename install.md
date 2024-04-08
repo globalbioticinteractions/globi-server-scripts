@@ -506,8 +506,10 @@ sudo apt install ufw
 
 ## configure certbot to allow http for auto-renew
 
+```
 sudo mkdir -p /etc/letsencrypt
 sudo cp etc/letsencrypt/cli.ini /etc/letsencrypt/cli.ini
+```
 
 where cli.ini contains something like:
 
