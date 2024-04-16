@@ -446,7 +446,7 @@ now, create elton cache dir (owned by ```elton``` user) using:
 
 ```
 sudo mkdir -p /mnt/storagebox-u302912-sub1/
-sudo ln -s /mnt/storagebox-u302912-sub1/data/elton /var/cache/elton
+sudo ln -s /mnt/storagebox-u302912-sub1/ /var/cache/elton
 sudo chown -h elton:elton /var/cache/elton
 ```
 
