@@ -25,7 +25,7 @@ function update {
 
   if [ "${FORCE_RESET}" = "-f" ]
   then
-    sudo rm "$GRAPH_DB_ARCHIVE"
+    sudo rm -f "$GRAPH_DB_ARCHIVE"
   fi
 
   if diff $GRAPH_DB_ARCHIVE $GRAPH_DB_SNAPSHOT >/dev/null ; then
