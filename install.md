@@ -386,7 +386,7 @@ sudo systemctl enable globi-api.service
 
 ### review dependencies
 ```
-sudo apt-get install s3cmd mlr jq
+sudo apt-get install s3cmd miller jq
 ```
 
 ### review configuration
