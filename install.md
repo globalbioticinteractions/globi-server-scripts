@@ -105,7 +105,7 @@ sudo ln -s /var/lib/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enab
 ## install neo4j
 
 ```
-wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add -
+wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
 echo 'deb https://debian.neo4j.com stable 3.5' | sudo tee /etc/apt/sources.list.d/neo4j.list
 sudo apt-get update
 
@@ -353,9 +353,6 @@ sudo systemctl enable check-neo4j.timer
 
 ## install globi build/update index services
 ```
-sudo ln -s /var/lib/globi/systemd/system/globi-build-ramdisk.service /lib/systemd/system/globi-build-ramdisk.service
-sudo systemctl enable globi-build-ramdisk.service
-
 sudo ln -s /var/lib/globi/systemd/system/globi-build-index.service /lib/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
