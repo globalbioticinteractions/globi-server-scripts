@@ -7,7 +7,8 @@
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::globi/release/*"
+        "arn:aws:s3:::globi/release/*",
+        "arn:aws:s3:::globi/snapshot/*"
       ],
       "Sid": ""
     }

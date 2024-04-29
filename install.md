@@ -387,12 +387,21 @@ sudo systemctl enable globi-api.service
 ### review dependencies
 ```
 sudo apt-get install s3cmd miller jq parallel
+curl --silent -L https://github.com/mikefarah/yq/releases/download/v4.25.3/yq_linux_386 > yq && sudo chown root:root yq && sudo chmod +x yq && sudo mv yq /usr/local/bin
+curl --silent -L https://github.com/jgm/pandoc/releases/download/3.1.6.1/pandoc-3.1.6.1-1-amd64.deb > pandoc.deb && sudo apt install -q ./pandoc.deb &> /dev/null
+sudo apt -q install pandoc-citeproc
+sudo apt -q install texlive texlive-xetex lmodern
+sudo apt -q install graphviz
+sudo apt -q install librsvg2-bin
+sudo apt -q install libxml2-utils
+sudo apt -q install pv
+sudo pip install s3cmd
 ```
 
 ### review configuration
 ```
 sudo cp /var/lib/globi/.s3cfg.template /etc/globi/.s3cfg
-sudo chown root:root /etc/globi/.s3cfg
+sudo chown globi:globi /etc/globi/.s3cfg
 sudo chmod 600 /etc/globi/.s3cfg
 ```
 after that, replace `REPLACE_ME` values with appropriate entries.
