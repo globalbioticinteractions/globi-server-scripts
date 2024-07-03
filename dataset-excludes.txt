@@ -29,6 +29,7 @@
 ^jerichocook/BIOL395Project$
 ^jhpoelen/dietdatabase$
 ^lamoroso92/pseudonitzchia$
+^liaochenlanruo/data$
 ^lanescher/dietdatabase$
 ^lirepo/data$
 ^marvelje/dietdatabase$
