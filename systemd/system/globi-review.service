@@ -11,6 +11,7 @@ EnvironmentFile=/etc/globi/globi.conf
 WorkingDirectory=/var/cache/globi/
 ExecStart=/bin/bash /var/lib/globi/review-datasets-all.sh
 LimitNOFILE=60000
+TimeoutStartSec=5days
 
 [Install]
 WantedBy= multi-user.target
