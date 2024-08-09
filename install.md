@@ -251,8 +251,13 @@ mc mb globi/snapshot
 mc mb globi/release
 mc mb globi/datasets
 ```
-## expect:
-## Bucket created successfully `minio/reviews`.
+
+expected outcome:
+
+```
+Bucket created successfully `globi/reviews`.
+```
+
 
 ## install rest api
 ## maven
