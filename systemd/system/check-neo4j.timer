@@ -2,7 +2,7 @@
 Description=Check Neo4j
 
 [Timer]
-OnCalendar=*-*-* *:*:00
+OnCalendar=*:0/15
 Persistent=true
 
 [Install]
