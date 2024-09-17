@@ -48,3 +48,4 @@
 ^xrisfg/inaturalist$
 ^yangxhcaf/fricke2020$
 ^yy549159265/data$
+^xrisfg/inaturalist$
