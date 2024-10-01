@@ -28,6 +28,7 @@
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
 ^jhpoelen/dietdatabase$
+^JXuu/Pathogen-host-range$
 ^lamoroso92/pseudonitzchia$
 ^liaochenlanruo/data$
 ^lanescher/dietdatabase$
