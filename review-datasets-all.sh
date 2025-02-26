@@ -4,7 +4,7 @@
 #
 set -x
 DATASET_DIR=${ELTON_DATASET_DIR:-/var/cache/elton/datasets}
-DATASETS_LOCAL=$(elton ls --cache-dir "${DATASET_DIR}" --no-progress | sort | uniq | grep -v "^local$")
+DATASETS_LOCAL=$(elton ls --prov-dir "${DATASET_DIR}" --data-dir "${DATASET_DIR}" --no-progress | sort | uniq | grep -v "^local$")
 
 # first run 10 review in sequence to warm up taxonomic resource caches
 echo "$DATASETS_LOCAL"\

@@ -14,6 +14,7 @@
 ^ecohealthalliance/bat-co-roosting-database$
 ^Faizaufa/redhead2018$
 ^FloraVincent/template-dataset$
+^genostack/Pathogen-host-range$
 ^georgeni2442/dietdatabase$
 ^ghc4/data$
 ^globalbioticinteractions/CarniDIET-Database$
