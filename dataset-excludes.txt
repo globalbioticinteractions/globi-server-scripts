@@ -52,3 +52,5 @@
 ^yangxhcaf/fricke2020$
 ^yy549159265/data$
 ^xrisfg/inaturalist$
+^zedomel/ATLANTIC_POLLINATION$
+^zedomel/test-worldfair$
