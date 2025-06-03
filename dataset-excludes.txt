@@ -20,6 +20,7 @@
 ^georgeni2442/dietdatabase$
 ^ghc4/data$
 ^globalbioticinteractions/CarniDIET-Database$
+^globalbioticinteractions/OBservData$
 ^globalbioticinteractions/phi-base-data$
 ^globalbioticinteractions/ummzi$
 ^qgroom/yale-peabody$
