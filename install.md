@@ -498,3 +498,10 @@ pre-hook = ufw allow http
 post-hook = ufw deny http
 ```
 
+# install duckdb
+
+duckdb.org is used for data reviews and generating parquet files.
+
+
+
+
