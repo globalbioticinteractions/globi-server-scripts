@@ -41,6 +41,7 @@
 ^lirepo/data$
 ^marmello77/BatFly_Interactions$
 ^marvelje/dietdatabase$
+^seltmann/template-dataset$
 ^shulp2211/data$
 ^sunjz520/data$
 ^ThaoLe20/Testing$
