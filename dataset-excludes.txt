@@ -34,6 +34,7 @@
 ^jerichocook/BIOL395Project$
 ^jhpoelen/dietdatabase$
 ^jhpoelen/gpt_interactions$
+^jhpoelen/OBservData$
 ^JXuu/Pathogen-host-range$
 ^lamoroso92/pseudonitzchia$
 ^liaochenlanruo/data$
