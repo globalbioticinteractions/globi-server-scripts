@@ -30,6 +30,7 @@
 ^HongyuLii/dietdatabase$
 ^rnaimehaom/virion$
 ^karelTole/template-dataset$
+^KatjaSchulz/inaturalist$
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
 ^jhpoelen/dietdatabase$
