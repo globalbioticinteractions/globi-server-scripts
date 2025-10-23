@@ -5,6 +5,7 @@
 ^arw36/template-dataset$
 ^Astudentx/data$
 ^Bhanditz/pseudonitzchia$
+^billurbektas/gpt_interactions$
 ^cgmayers/template-dataset$
 ^cooperrlynn/dietdatabase$
 ^cmungall/Benesh-et-al-2017$
@@ -56,6 +57,7 @@
 ^UCcongenomics/template-dataset$
 ^wenqiqin/data$
 ^xiaochunzihao/data$
+^xiaotuxiaotu520/gpt_interactions^
 ^xrisfg/inaturalist$
 ^yangxhcaf/fricke2020$
 ^yy549159265/data$
