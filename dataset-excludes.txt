@@ -29,6 +29,7 @@
 ^qgroom/iguana$
 ^qgroom/template-dataset$
 ^HongyuLii/dietdatabase$
+^ibartomeus/OBservData$
 ^rnaimehaom/virion$
 ^karelTole/template-dataset$
 ^KatjaSchulz/inaturalist$
@@ -42,6 +43,7 @@
 ^liaochenlanruo/data$
 ^lanescher/dietdatabase$
 ^lirepo/data$
+^nickkunz/OBservData$
 ^marmello77/BatFly_Interactions$
 ^marvelje/dietdatabase$
 ^seltmann/template-dataset$
