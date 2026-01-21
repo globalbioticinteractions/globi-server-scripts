@@ -38,6 +38,7 @@
 ^jhpoelen/dietdatabase$
 ^jhpoelen/gpt_interactions$
 ^jhpoelen/OBservData$
+^jhpoelen/BeeFunc1.0DataPaper$
 ^JXuu/Pathogen-host-range$
 ^lamoroso92/pseudonitzchia$
 ^liaochenlanruo/data$
