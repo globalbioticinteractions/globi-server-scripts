@@ -16,6 +16,7 @@
 ^Dryu0003/dietdatabase$
 ^ecohealthalliance/bat-co-roosting-database$
 ^ElPea9/EuPPollNet$
+^Evamino/dietdatabase$
 ^Faizaufa/redhead2018$
 ^FloraVincent/template-dataset$
 ^genostack/Pathogen-host-range$
