@@ -36,10 +36,11 @@
 ^KatjaSchulz/inaturalist$
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
+^jhpoelen/BeeFunc1.0DataPaper$
 ^jhpoelen/dietdatabase$
+^jhpoelen/EDWIP$
 ^jhpoelen/gpt_interactions$
 ^jhpoelen/OBservData$
-^jhpoelen/BeeFunc1.0DataPaper$
 ^JXuu/Pathogen-host-range$
 ^lamoroso92/pseudonitzchia$
 ^liaochenlanruo/data$
