@@ -285,7 +285,6 @@ jhpoelen/bat1k-talk-2024-10-27
 jhpoelen/BatFly_Interactions
 jhpoelen/bee-interaction-database
 jhpoelen/caradonna2020
-jhpoelen/EcoPics_Interactions
 jhpoelen/geosymbio
 jhpoelen/Gippet2023_GiantLandSnails
 jhpoelen/JLewis_GoMexSi

@@ -39,6 +39,7 @@
 ^jhpoelen/BeeFunc1.0DataPaper$
 ^jhpoelen/database$
 ^jhpoelen/dietdatabase$
+^jhpoelen/EcoPics_Interactions$
 ^jhpoelen/EDWIP$
 ^jhpoelen/gpt_interactions$
 ^jhpoelen/OBservData$
