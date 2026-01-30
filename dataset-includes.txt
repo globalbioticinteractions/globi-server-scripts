@@ -314,9 +314,7 @@ jhammock/beaverfeast
 jhammock/Checklist-of-Micro-Organisms-Associated-With-Tree-Seeds-in-the-World
 jhammock/Layman-and-Allgeier-Lionfish
 jhpoelen/animal-disease
-jhpoelen/ballantyne2015
 jhpoelen/bat1k-talk-2024-10-27
-jhpoelen/BatFly_Interactions
 jhpoelen/bee-interaction-database
 jhpoelen/caradonna2020
 jhpoelen/geosymbio
