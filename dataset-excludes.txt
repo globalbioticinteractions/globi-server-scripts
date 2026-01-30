@@ -48,6 +48,7 @@
 ^jhpoelen/redhead2018$
 ^jhpoelen/SternerLab-MammalVirusData$
 ^jhpoelen/ummzi$
+^jhpoelen/willoughby-etal-2021-bat-co-roosting$
 ^JXuu/Pathogen-host-range$
 ^lamoroso92/pseudonitzchia$
 ^liaochenlanruo/data$
