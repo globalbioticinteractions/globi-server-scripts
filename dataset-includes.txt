@@ -429,7 +429,6 @@ qgroom/bedbugs
 qgroom/iguana
 qgroom/refuteINAT
 qgroom/Sceliphron
-qgroom/template-dataset
 qgroom/Vespa-velutina
 ramalok/PIDA
 rnbehm/bee-interaction-database
@@ -440,7 +439,6 @@ seltmann/bee-interaction-database
 seltmann/global-bee-interaction-data
 seltmann/ParasiteTracker-Globi
 seltmann/taxonomy-darwin-core
-seltmann/template-dataset
 seltmann/vampire-moth-globi
 seltmann/vampire-moths-and-their-fruit-piercing-relatives
 SimoneLioy/Vespa-velutina-interactions
@@ -452,11 +450,8 @@ thebateslab/mycoportal
 theptin/Thamnophis-GloBI
 tkarim/izinteractions
 tkarim/paleo-interactions-test
-tkuhn/template-dataset
 trias-project/eu-species-of-concern-interactions
-trsraman/template-dataset
 TutoTestTuto/tutorial
-UCcongenomics/template-dataset
 zedomel/ballantyne2015
 zedomel/bartomeus2008
 zedomel/caradonna2020
