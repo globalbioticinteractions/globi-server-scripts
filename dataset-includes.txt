@@ -332,7 +332,6 @@ jhpoelen/portalier2018
 jhpoelen/Procambarus-acutus
 jhpoelen/pushPullIntxn
 jhpoelen/random-forests-for-predicting-predator-prey-interactions-in-terrestrial-vertebrates
-jhpoelen/redhead2018
 jhpoelen/taxonomy-darwin-core
 jhpoelen/udy2020
 jhpoelen/ummzi
