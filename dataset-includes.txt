@@ -8,7 +8,6 @@ BDMYRepository/Echino-Interactions
 BDMYRepository/Paguroidea-Mollusca-Interactions
 BDMYRepository/Sponge_Interactions
 beraute/Klamath-mountains
-BDMYRepository/Paguroidea-Mollusca-Interactions
 beraute/Pillar_Point_16S_18S
 beraute/Pillar_Point_CO1_16S
 Big-Bee-Network/bee-interaction-database
