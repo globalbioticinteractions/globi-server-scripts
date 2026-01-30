@@ -37,6 +37,7 @@
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
 ^jhpoelen/ballantyne2015$
+^jhpoelen/bat1k-talk-2024-10-27$
 ^jhpoelen/BatFly_Interactions$
 ^jhpoelen/bee-interaction-database$
 ^jhpoelen/BeeFunc1.0DataPaper$
@@ -59,6 +60,7 @@
 ^jhpoelen/random-forests-for-predicting-predator-prey-interactions-in-terrestrial-vertebrates$
 ^jhpoelen/redhead2018$
 ^jhpoelen/SternerLab-MammalVirusData$
+^jhpoelen/udy2020$
 ^jhpoelen/ummzi$
 ^jhpoelen/willoughby-etal-2021-bat-co-roosting$
 ^JXuu/Pathogen-host-range$

@@ -314,14 +314,12 @@ jhammock/beaverfeast
 jhammock/Checklist-of-Micro-Organisms-Associated-With-Tree-Seeds-in-the-World
 jhammock/Layman-and-Allgeier-Lionfish
 jhpoelen/animal-disease
-jhpoelen/bat1k-talk-2024-10-27
 jhpoelen/geosymbio
 jhpoelen/Gippet2023_GiantLandSnails
 jhpoelen/JLewis_GoMexSi
 jhpoelen/Lice
 jhpoelen/overson_2023
 jhpoelen/taxonomy-darwin-core
-jhpoelen/udy2020
 jhpoelen/uredinales-belgium-checklist
 JohnLlewelyn/random-forests-for-predicting-predator-prey-interactions-in-terrestrial-vertebrates
 JordanSowards/SternerLab-MammalVirusData-Jordan
