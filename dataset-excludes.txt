@@ -47,6 +47,7 @@
 ^jhpoelen/PIDA$
 ^jhpoelen/redhead2018$
 ^jhpoelen/SternerLab-MammalVirusData$
+^jhpoelen/ummzi$
 ^JXuu/Pathogen-host-range$
 ^lamoroso92/pseudonitzchia$
 ^liaochenlanruo/data$
