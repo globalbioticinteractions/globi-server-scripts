@@ -37,6 +37,7 @@
 ^kinseyfish/dietdatabase$
 ^jerichocook/BIOL395Project$
 ^jhpoelen/BeeFunc1.0DataPaper$
+^jhpoelen/ballantyne2015$
 ^jhpoelen/CropPol$
 ^jhpoelen/database$
 ^jhpoelen/dietdatabase$
