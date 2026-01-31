@@ -17,7 +17,6 @@ CALeDNA/Klamath-mountains
 diatomsRcool/greenland_interactions
 ekrimmel/paleo-interactions-test
 diatomsRcool/yellowstone_grizzly
-elntangle/bee-interaction-database
 EMTuckerLab/ummzi
 EMTuckerLabUMMZ/ummzi
 EOL/pseudonitzchia
