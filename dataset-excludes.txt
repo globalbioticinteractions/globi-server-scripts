@@ -32,6 +32,7 @@
 ^HongyuLii/dietdatabase$
 ^ibartomeus/OBservData$
 ^rnaimehaom/virion$
+^rnbehm/bee-interaction-database$
 ^karelTole/template-dataset$
 ^KatjaSchulz/inaturalist$
 ^kinseyfish/dietdatabase$
