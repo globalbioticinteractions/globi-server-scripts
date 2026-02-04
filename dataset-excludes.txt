@@ -23,6 +23,7 @@
 ^genostack/Pathogen-host-range$
 ^georgeni2442/dietdatabase$
 ^ghc4/data$
+^globalbioticinteractions/bee-interaction-database$
 ^globalbioticinteractions/CarniDIET-Database$
 ^globalbioticinteractions/OBservData$
 ^globalbioticinteractions/phi-base-data$
@@ -76,6 +77,7 @@
 ^marvelje/dietdatabase$
 ^ManuelRuizAravena/Cohen_database_pathogens$
 ^seltmann/template-dataset$
+^seltmann/global-bee-interaction-data$
 ^Seunghun-Jung/pollination_catalogue$
 ^ShirNehoray/EuPPollNet$
 ^shulp2211/data$
@@ -89,6 +91,7 @@
 ^teleaslamellatus/taxonomy-darwin-core$
 ^tkuhn/template-dataset$
 ^trsraman/template-dataset$
+^TutoTestTuto/tutorial$
 ^UCcongenomics/template-dataset$
 ^wenqiqin/data$
 ^xiaochunzihao/data$

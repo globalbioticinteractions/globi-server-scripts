@@ -81,7 +81,6 @@ globalbioticinteractions/bat-co-roosting-database
 globalbioticinteractions/BCI_Seed_Predator
 globalbioticinteractions/bco-dmo
 globalbioticinteractions/batplant
-globalbioticinteractions/bee-interaction-database
 globalbioticinteractions/bell
 globalbioticinteractions/becker2020
 globalbioticinteractions/bergamo2020
@@ -416,7 +415,6 @@ rodriguesgfb/hermitcrab_gastropod
 SabinaVlad/iguana
 SabinaVlad/iguanas-interactions
 seltmann/bee-interaction-database
-seltmann/global-bee-interaction-data
 seltmann/ParasiteTracker-Globi
 seltmann/taxonomy-darwin-core
 seltmann/vampire-moth-globi
@@ -431,7 +429,6 @@ theptin/Thamnophis-GloBI
 tkarim/izinteractions
 tkarim/paleo-interactions-test
 trias-project/eu-species-of-concern-interactions
-TutoTestTuto/tutorial
 zedomel/ballantyne2015
 zedomel/bartomeus2008
 zedomel/caradonna2020
