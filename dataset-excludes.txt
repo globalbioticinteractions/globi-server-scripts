@@ -17,6 +17,7 @@
 ^ecohealthalliance/bat-co-roosting-database$
 ^ElPea9/EuPPollNet$
 ^elntangle/bee-interaction-database$
+^EMTuckerLabUMMZ/ummzi$
 ^Evamino/dietdatabase$
 ^Faizaufa/redhead2018$
 ^FloraVincent/template-dataset$

@@ -18,7 +18,6 @@ diatomsRcool/greenland_interactions
 ekrimmel/paleo-interactions-test
 diatomsRcool/yellowstone_grizzly
 EMTuckerLab/ummzi
-EMTuckerLabUMMZ/ummzi
 EOL/pseudonitzchia
 fgabriel1891/Palm-Frugivore_Interactions_Neo-Afrotropics
 fgabriel1891/Plant-Frugivore-Interactions-SouthEastAsia
