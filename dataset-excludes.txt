@@ -27,6 +27,7 @@
 ^ghc4/data$
 ^globalbioticinteractions/bee-interaction-database$
 ^globalbioticinteractions/CarniDIET-Database$
+^globalbioticinteractions/MojaveFoodWeb$
 ^globalbioticinteractions/OBservData$
 ^globalbioticinteractions/phi-base-data$
 ^globalbioticinteractions/ummzi$
