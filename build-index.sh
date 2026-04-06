@@ -35,7 +35,7 @@ function process_dataset {
 
 function rebuild {
   if [ ! -f $1/.git/description ]; then
-	git clone git://github.com/globalbioticinteractions/globalbioticinteractions.git $1
+	git clone https://github.com/globalbioticinteractions/globalbioticinteractions.git $1
   fi
 
   cd $1
