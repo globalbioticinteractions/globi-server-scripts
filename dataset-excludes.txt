@@ -26,6 +26,7 @@
 ^georgeni2442/dietdatabase$
 ^ghc4/data$
 ^globalbioticinteractions/bee-interaction-database$
+^globalbioticinteractions/calvalheiro2023$
 ^globalbioticinteractions/CarniDIET-Database$
 ^globalbioticinteractions/MojaveFoodWeb$
 ^globalbioticinteractions/OBservData$
