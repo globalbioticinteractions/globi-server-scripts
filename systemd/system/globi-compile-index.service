@@ -1,5 +1,5 @@
 [Unit]
-Description=Rebuild GloBI Indexes
+Description=Compile GloBI Indexes
 
 
 [Service]
