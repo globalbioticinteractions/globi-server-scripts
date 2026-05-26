@@ -356,8 +356,11 @@ sudo systemctl enable check-neo4j.timer
 ```
 
 
-## install globi build/update index services
+## install globi compile/build/update index services
 ```
+sudo ln -s /var/lib/globi/systemd/system/globi-compile-index.service /lib/systemd/system/globi-compile-index.service
+sudo systemctl enable globi-compile-index.service
+
 sudo ln -s /var/lib/globi/systemd/system/globi-build-index.service /lib/systemd/system/globi-build-index.service
 sudo systemctl enable globi-build-index.service
 
