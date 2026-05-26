@@ -7,7 +7,7 @@ Type=oneshot
 User=globi
 EnvironmentFile=/etc/globi/globi.conf
 WorkingDirectory=/var/cache/globi/
-ExecStart=/bin/bash /var/lib/globi/post-compile-index.sh
+ExecStart=/bin/bash /var/lib/globi/compile-index.sh
 LimitNOFILE=60000
 
 [Install]
