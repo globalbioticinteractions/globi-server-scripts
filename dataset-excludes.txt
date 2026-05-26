@@ -28,10 +28,13 @@
 ^globalbioticinteractions/bee-interaction-database$
 ^globalbioticinteractions/calvalheiro2023$
 ^globalbioticinteractions/CarniDIET-Database$
+^globalbioticinteractions/dbatvir$
+^globalbioticinteractions/drodvir$
 ^globalbioticinteractions/MojaveFoodWeb$
 ^globalbioticinteractions/OBservData$
 ^globalbioticinteractions/phi-base-data$
 ^globalbioticinteractions/ummzi$
+^globalbioticinteractions/zover$
 ^pizrr/thebig2$
 ^qgroom/yale-peabody$
 ^qgroom/iguana$
