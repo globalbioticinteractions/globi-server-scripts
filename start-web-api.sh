@@ -20,7 +20,13 @@ fi
 echo jetty rebuilding...
 mvn clean package -pl eol-globi-rest -am --settings /etc/globi/.m2/settings.xml -DskipTests  
 
+if [ -z "$JAVA_HOME" ] ; then
+  JAVACMD=`which java`
+else
+  JAVACMD="$JAVA_HOME/bin/java"
+fi
+
 echo jetty starting...
-java -Dneo4j.cypher.uri="http://${NEO4J_HOST}:${NEO4J_PORT}/db/data/transaction/commit" -jar $JETTY_DIR/dependency/jetty-runner.jar --port 8080 --host localhost $JETTY_DIR/*.war 
+"${JAVACMD}" -Dneo4j.cypher.uri="http://${NEO4J_HOST}:${NEO4J_PORT}/db/data/transaction/commit" -jar $JETTY_DIR/dependency/jetty-runner.jar --port 8080 --host localhost $JETTY_DIR/*.war 
 
 
