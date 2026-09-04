@@ -103,16 +103,20 @@ sudo ln -s /var/lib/globi/nginx/sites-available/globi.conf /etc/nginx/sites-enab
 
 
 ## install neo4j
-
+# from https://debian.neo4j.com/ accessed on 2026-09-04
 ```
-wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
-echo 'deb https://debian.neo4j.com stable 3.5' | sudo tee /etc/apt/sources.list.d/neo4j.list
+sudo mkdir -p /etc/apt/keyrings
+wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/neotechnology.gpg > /dev/null
+sudo chmod a+r /etc/apt/keyrings/neotechnology.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/neotechnology.gpg] https://debian.neo4j.com stable 5' | sudo tee -a /etc/apt/sources.list.d/neo4j.list > /dev/null
 sudo apt-get update
+# verify neo4j versions available
+apt list -a neo4j
 
-sudo apt install neo4j=1:3.5.35
+sudo apt install neo4j
 # https://linoxide.com/linux-how-to/exclude-specific-package-apt-get-upgrade/ 
 # prevent neo4j from being automagically upgraded to latest version
-sudo apt-mark hold neo4j 
+# sudo apt-mark hold neo4j 
 ```
 
 ### boostrap neo4j data
