@@ -6,7 +6,8 @@ NEO4J_PORT=7477
 NEO4J_HOST=localhost
 
 # set specific version of GloBI indexer to use
-#COMMIT_HASH=3c8cb8ec8fb5facb15b0f16f30afe524a9047583
+# Aug 2026 commit on neo4j v3.5
++COMMIT_HASH=366437f6d7a845fed51f4a65dfcf2cb060725699
 
 cd "$GLOBI_HOME"
 echo updating git ...
@@ -27,6 +28,9 @@ else
 fi
 
 echo jetty starting...
-"${JAVACMD}" -Dneo4j.cypher.uri="http://${NEO4J_HOST}:${NEO4J_PORT}/db/data/transaction/commit" -jar $JETTY_DIR/dependency/jetty-runner.jar --port 8080 --host localhost $JETTY_DIR/*.war 
+cd eol-globi-rest 
+mvn jetty:run --settings /etc/globi/.m2/settings-public.xml
+
+#"${JAVACMD}" -Dneo4j.cypher.uri="http://${NEO4J_HOST}:${NEO4J_PORT}/db/data/transaction/commit" -jar $JETTY_DIR/dependency/jetty-runner.jar --port 8080 --host localhost $JETTY_DIR/*.war 
 
 
