@@ -278,8 +278,11 @@ sudo apt install maven
 
 ```
 sudo mkdir -p /etc/globi/.m2/
+sudo cp /var/lib/globi/.m2/settings-public.xml /etc/globi/.m2/settings-public.xml
 sudo cp /var/lib/globi/.m2/settings.xml.template /etc/globi/.m2/settings.xml
+sudo chown globi:globi /etc/globi/.m2/settings-public.xml
 sudo chown globi:globi /etc/globi/.m2/settings.xml
+sudo chmod 600 /etc/globi/.m2/settings-public.xml
 sudo chmod 600 /etc/globi/.m2/settings.xml
 sudo mkdir -p /var/cache/globi/repository
 sudo chown -R globi:globi /var/cache/globi
