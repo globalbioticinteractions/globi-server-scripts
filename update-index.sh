@@ -17,7 +17,7 @@ function update {
   GRAPH_DB_ARCHIVE_NEW=$NEO4J_CACHE_DIR/graph.db.new.$GRAPH_DB_EXT
 
   mkdir -p $NEO4J_CACHE_DIR
-  chown neo4j:adm $NEO4J_CACHE_DIR
+  chown -R neo4j:adm $NEO4J_CACHE_DIR
 
   # grab data
   GRAPH_DB_VERSION="2.0-SNAPSHOT"
@@ -33,7 +33,7 @@ function update {
   else
     echo File different updating
     cp $GRAPH_DB_SNAPSHOT $GRAPH_DB_ARCHIVE
-    chown neo4j:adm $GRAPH_DB_ARCHIVE 
+    chown -R neo4j:adm $GRAPH_DB_ARCHIVE 
     sudo -u neo4j rm -rf $NEO4J_CACHE_UPDATE_DIR && sudo -u neo4j mkdir -p $NEO4J_CACHE_UPDATE_DIR
     sudo -u neo4j unzip $GRAPH_DB_ARCHIVE -d $NEO4J_CACHE_UPDATE_DIR
     sudo /usr/sbin/service ${neo4j_name} stop
