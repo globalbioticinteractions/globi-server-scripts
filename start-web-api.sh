@@ -7,7 +7,7 @@ NEO4J_HOST=localhost
 
 # set specific version of GloBI indexer to use
 # Aug 2026 commit on neo4j v3.5
-+COMMIT_HASH=366437f6d7a845fed51f4a65dfcf2cb060725699
+# COMMIT_HASH=366437f6d7a845fed51f4a65dfcf2cb060725699
 
 cd "$GLOBI_HOME"
 echo updating git ...
