@@ -19,7 +19,7 @@ if [ -n "$COMMIT_HASH" ]; then
 fi
 
 echo jetty rebuilding...
-mvn clean package -pl eol-globi-rest -am --settings /etc/globi/.m2/settings.xml -DskipTests  
+mvn clean install -pl eol-globi-rest -am --settings /etc/globi/.m2/settings-public.xml -DskipTests  
 
 if [ -z "$JAVA_HOME" ] ; then
   JAVACMD=`which java`
