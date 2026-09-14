@@ -4,7 +4,7 @@
 
 set -x
 
-echo "CYPHER 2.3 start d = node:datasets('namespace:\"globalbioticinteractions/template-dataset\"') return d.namespace limit 1;"\
+echo "CYPHER 5 MATCH (d:Dataset { namespace: 'globalbioticinteractions/template-dataset'}) return d.namespace limit 1;"
  | cypher-shell\
  | grep "template-dataset"
 
