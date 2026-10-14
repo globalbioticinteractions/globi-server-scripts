@@ -38,9 +38,9 @@ function update {
     sudo -u neo4j unzip $GRAPH_DB_ARCHIVE -d $NEO4J_CACHE_UPDATE_DIR
     sudo /usr/sbin/service ${neo4j_name} stop
     echo $(date) installing new ${neo4j_name} data index...
-    sudo -u neo4j mv $NEO4J_CACHE_DIR/graph.db $NEO4J_CACHE_UPDATE_DIR/graph.db.old
-    sudo -u neo4j mv $NEO4J_CACHE_UPDATE_DIR/graph.db $NEO4J_CACHE_DIR/graph.db
-    sudo -u neo4j rm -rf $NEO4J_CACHE_UPDATE_DIR/graph.db.old
+    sudo -u neo4j mv $NEO4J_CACHE_DIR/data $NEO4J_CACHE_UPDATE_DIR/data.old
+    sudo -u neo4j mv $NEO4J_CACHE_UPDATE_DIR/graph.db/data $NEO4J_CACHE_DIR/data
+    sudo -u neo4j rm -rf $NEO4J_CACHE_UPDATE_DIR/data.old
     echo $(date) installing new ${neo4j_name} data index done.
     sudo /usr/sbin/service ${neo4j_name} start
   fi
